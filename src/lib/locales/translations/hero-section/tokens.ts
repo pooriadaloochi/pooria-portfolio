@@ -1,4 +1,4 @@
-export const introData = {
+export const introduction = {
   title: "introData.title",
   animated: {
     first: "introData.animated.first",
@@ -6,4 +6,5 @@ export const introData = {
     third: "introData.animated.third",
   },
   description: "introData.description",
+  contactMe: "introData.contactMe",
 } as const;

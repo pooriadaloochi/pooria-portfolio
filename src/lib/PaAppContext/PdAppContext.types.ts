@@ -1,5 +1,5 @@
 import type { PaletteMode } from "@mui/material";
-import { LocalesEnum } from "../locales/i18.types";
+import { LocalesType } from "../locales/i18.types";
 
 export enum PaAppContextActionName {
   SWITCH_THEME,
@@ -8,17 +8,20 @@ export enum PaAppContextActionName {
 
 export type PaAppContextState = {
   paletteMode: PaletteMode;
-  lang: LocalesEnum;
+  lang: LocalesType;
 };
 
 export type PaAppContextActions = {
   switchTheme: () => void;
-  switchLanguage: (payload: LocalesEnum) => void;
+  switchLanguage: (payload: LocalesType) => void;
 };
 
 export type PaAppContextAction =
   | PaContextAction<PaAppContextActionName.SWITCH_THEME>
-  | PaContextActionWithPayload<PaAppContextActionName.SWITCH_LANGUAGE, LocalesEnum>;
+  | PaContextActionWithPayload<
+      PaAppContextActionName.SWITCH_LANGUAGE,
+      LocalesType
+    >;
 
 export type PaContextAction<T> = {
   type: T;

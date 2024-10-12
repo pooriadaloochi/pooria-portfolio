@@ -1,4 +1,4 @@
-import { Box, Button, Link, useTheme, Grid } from "@mui/material";
+import { Box, Button, Link, useTheme, Grid, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
@@ -6,10 +6,8 @@ import { personalData } from "../../../api/personalData";
 import PdCoderCard from "../../coder/PdCoder";
 import Typewriter from "typewriter-effect";
 import HeroIcon from "../../icons/HeroIcon";
-// import { introData } from "../../../api/introData";
 import { coderData } from "../../../api/coderData";
-import { useTranslation } from 'react-i18next';
-
+import { useTranslation } from "react-i18next";
 
 export default function PdHeroSection() {
   const { primary, secondary } = useTheme().palette;
@@ -100,14 +98,23 @@ export default function PdHeroSection() {
             ))}
             <Link href="#contact" underline="none">
               <Button
+                fullWidth
                 variant="contained"
-                startIcon={<ContactMailIcon />}
                 color="inherit"
                 sx={{
+                  minWidth: "170px",
                   mt: -2,
                 }}
               >
-                Contact me
+                <Stack
+                  flexDirection="row"
+                  width="100%"
+                  justifyContent="space-around"
+                  alignItems="center"
+                >
+                  <ContactMailIcon />
+                  {t("introData.contactMe")}
+                </Stack>
               </Button>
             </Link>
           </Box>

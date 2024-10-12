@@ -1,6 +1,6 @@
-import { introData } from "./tokens";
+import { introduction } from "./tokens";
 
-const t = introData;
+const t = introduction;
 
 export const introDE = {
   [t.title]: "Ich bin Pouya Dalouchi",
@@ -9,4 +9,5 @@ export const introDE = {
   [t.animated.third]: "Ich erstelle skalierbare Systeme",
   [t.description]:
     "Full-Stack-Entwickler mit über 7 Jahren Erfahrung in der Erstellung moderner, effizienter und skalierbarer Anwendungen, spezialisiert auf React, Node.js und TypeScript.",
+  [t.contactMe]: "Kontaktiere mich",
 };

@@ -1,6 +1,6 @@
-import { introData } from "./tokens";
+import { introduction } from "./tokens";
 
-const t = introData;
+const t = introduction;
 
 export const introFA = {
   [t.title]: "من پوریا دالوچی هستم",
@@ -9,4 +9,5 @@ export const introFA = {
   [t.animated.third]: "سیستم های قابل مقیاس را ایجاد می کنم",
   [t.description]:
     "توسعه دهنده Full-Stack با بیش از 7 سال تجربه در ساخت برنامه های مدرن، کارآمد و قابل مقیاس، تخصص در React، Node.js و TypeScript.",
+  [t.contactMe]: "با من تماس بگیرید",
 };

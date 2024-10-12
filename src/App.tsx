@@ -9,11 +9,11 @@ import { ThemeProvider } from "@mui/material";
 import { useEffect, useMemo } from "react";
 import { getMuiLanguageValue } from "./lib/helper/getMuiLanguageValue";
 import { createTheme } from "./lib/theme";
-import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./lib/locales/i18n";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const element = useRoutes(routes);
@@ -40,8 +40,8 @@ function App() {
         <meta name="color-scheme" content="dark" />
         <meta name="theme-color" content="dark" />
       </Helmet>
-      <ToastContainer />
       <CssBaseline />
+      <ToastContainer position="bottom-left" theme="colored" />
       {false ? <SplashScreen /> : <>{element}</>}
     </ThemeProvider>
   );

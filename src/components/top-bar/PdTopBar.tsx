@@ -6,13 +6,18 @@ import {
   Link,
   alpha,
   useTheme,
+  Stack,
 } from "@mui/material";
-import { personalData } from "../../api/personalData";
 import PdSwitchTheme from "./PdSwitchTheme";
 import { PdSwitchLanguage } from "./PdSwitchLanguage";
+import { useTranslation } from "react-i18next";
+import { getTopBarItems } from "../../lib/models/top-bar/topBarItems";
 
 function PdNavbar() {
   const { background, primary } = useTheme().palette;
+  const { t } = useTranslation();
+
+  const items = getTopBarItems(t);
 
   return (
     <AppBar
@@ -30,39 +35,19 @@ function PdNavbar() {
               variant="h4"
               sx={{ color: primary.main, fontWeight: "bold" }}
             >
-              {personalData.name}
+              {t("topBar.logo")}
             </Typography>
           </Link>
         </Box>
 
-        <Box
-          component="ul"
-          sx={{
-            display: "flex",
-            listStyle: "none",
-            gap: 2,
-            m: 0,
-            p: 0,
-            flexDirection: { xs: "column", md: "row" },
-          }}
-        >
-          {[
-            { href: "/#about", label: "ABOUT" },
-            { href: "/#experience", label: "EXPERIENCE" },
-            { href: "/#skills", label: "SKILLS" },
-            { href: "/#education", label: "EDUCATION" },
-            { href: "/blog", label: "BLOGS" },
-            { href: "/#projects", label: "PROJECTS" },
-          ].map((item) => (
+        <Box component="ul" sx={{ display: "flex", gap: 5 }}>
+          {items.map((item) => (
             <Box key={item.label} component="li" sx={{ listStyle: "none" }}>
               <Link
                 href={item.href}
                 underline="none"
                 sx={{
                   display: "block",
-                  px: 2,
-                  py: 1,
-                  textDecoration: "none",
                   transition: "color 0.3s",
                   "&:hover": { color: primary.light },
                 }}
@@ -74,8 +59,10 @@ function PdNavbar() {
             </Box>
           ))}
         </Box>
-        <PdSwitchTheme />
-        <PdSwitchLanguage />
+        <Stack sx={{ flexDirection: "row" }} gap={3}>
+          <PdSwitchTheme />
+          <PdSwitchLanguage />
+        </Stack>
       </Toolbar>
     </AppBar>
   );

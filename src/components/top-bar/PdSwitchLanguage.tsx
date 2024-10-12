@@ -1,35 +1,60 @@
 import { useTranslation } from "react-i18next";
 import { MenuItem, Select, SelectChangeEvent, Stack } from "@mui/material";
 import { usePaAppContextActions } from "../../lib/PaAppContext";
-import { LocalesEnum } from "../../lib/locales/i18.types";
+import { LocalesEnum, LocalesType } from "../../lib/locales/i18.types";
+import { toast } from "react-toastify";
+import { commonEN } from "../../lib/locales/translations/common/en";
+import { commonFA } from "../../lib/locales/translations/common/fa";
+import { commonDE } from "../../lib/locales/translations/common/de";
 
-const languages = [
+type LanguagesType = {
+  name: LocalesType;
+  country: string;
+};
+
+const languages: LanguagesType[] = [
   {
-    name: "en",
+    name: LocalesEnum.EN,
     country: "us",
   },
   {
-    name: "fa",
+    name: LocalesEnum.FA,
     country: "ir",
   },
   {
-    name: "de",
+    name: LocalesEnum.DE,
     country: "de",
   },
 ];
+
+const getLanguageChangeMessage = (name: string) => {
+  switch (name) {
+    case LocalesEnum.EN:
+      return commonEN["common.languages.messages.success"];
+    case LocalesEnum.FA:
+      return commonFA["common.languages.messages.success"];
+    case LocalesEnum.DE:
+      return commonDE["common.languages.messages.success"];
+    default:
+      return commonEN["common.languages.messages.error"];
+  }
+};
 
 export function PdSwitchLanguage() {
   const { t, i18n } = useTranslation();
   const { switchLanguage } = usePaAppContextActions();
 
   const handleChangeLanguage = (event: SelectChangeEvent<string>) => {
-    const selectedLanguage = event.target.value as LocalesEnum;
+    const selectedLanguage = event.target.value as LocalesType;
     switchLanguage(selectedLanguage);
-    i18n.changeLanguage(selectedLanguage);
+    toast.success(getLanguageChangeMessage(selectedLanguage), {
+      autoClose: 1000,
+    });
   };
   const getToken = (name: string) => {
     return `common.languages.${name}`;
   };
+
   return (
     <Select
       value={i18n.language}

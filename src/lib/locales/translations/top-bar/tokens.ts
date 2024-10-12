@@ -8,4 +8,7 @@ export const topBar = {
     blogs: "topBar.items.blogs",
     projects: "topBar.items.projects",
   },
+  footer: {
+    poweredBy: "topBar.footer.poweredBy",
+  },
 } as const;

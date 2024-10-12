@@ -92,9 +92,7 @@ export default function PdCoderCard({ title, data }: CoderCardProps) {
             <Box component="span" sx={{ color: "#e91e63" }}>
               const
             </Box>
-            <Box component="span" sx={{ color: "#fff" }}>
-              {title}
-            </Box>
+            <Box component="span">{title}</Box>
             <Box component="span" sx={{ color: "#e91e63" }}>
               =
             </Box>

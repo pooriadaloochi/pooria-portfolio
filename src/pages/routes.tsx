@@ -21,15 +21,15 @@ export const routes: RouteObject[] = [
   // Common Pages
   {
     path: "401",
-    element: <>401</>,
+    element: <Layout>401</Layout>,
   },
   {
     path: "404",
-    element: <>404</>,
+    element: <Layout>404</Layout>,
   },
   {
     path: "500",
-    element: <>500</>,
+    element: <Layout>500</Layout>,
   },
   {
     path: "*",

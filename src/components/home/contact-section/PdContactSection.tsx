@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 
 export default function PdContactSection() {
   return (
-    <Box id="contact" my={12} mt={24} position="relative" color="white">
-      <Grid container spacing={8} alignItems="center">
+    <Box id="contact" my={12} mt={24} color="white">
+      <Grid container alignItems="center">
         <Grid item xs={12} lg={6}>
           {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY &&
           process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY ? (
@@ -23,7 +23,7 @@ export default function PdContactSection() {
           )}
         </Grid>
 
-        <Grid item xs={12} lg={6} position="relative">
+        <Grid item xs={12} lg={6} position="relative" sx={{direction:"ltr"}}>
           <Box display="flex" flexDirection="column" gap={4}>
             <Box display="flex" alignItems="center" gap={3}>
               <AlternateEmailIcon

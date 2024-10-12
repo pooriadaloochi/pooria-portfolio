@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./lib/locales/i18n";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { ToastContainer } from "react-toastify";
+import { LocalesEnum } from "./lib/locales/i18.types";
 
 function App() {
   const element = useRoutes(routes);
@@ -25,13 +26,13 @@ function App() {
         paletteMode,
         muiLanguageValue: getMuiLanguageValue(lang),
         resFontSizes: true,
-        direction: lang === "fa" ? "rtl" : "ltr",
+        direction: lang === LocalesEnum.FA ? "rtl" : "ltr",
       }),
     [paletteMode, lang]
   );
 
   useEffect(() => {
-    document.body.dir = lang === "fa" ? "rtl" : "ltr";
+    document.body.dir = lang === LocalesEnum.FA ? "rtl" : "ltr";
   }, [lang]);
 
   return (

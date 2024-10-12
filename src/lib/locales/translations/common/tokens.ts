@@ -1,4 +1,5 @@
 export const common = {
+  homePageTitle: "common.homePageTitle",
   languages: {
     en: "common.languages.en",
     fa: "common.languages.fa",

@@ -10,4 +10,6 @@ export const topBarEN = {
   [t.items.education]: "Education",
   [t.items.blogs]: "Blogs",
   [t.items.projects]: "Projects",
+  // Footer
+  [t.footer.poweredBy]: "Developer Portfolio by",
 };

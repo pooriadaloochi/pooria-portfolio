@@ -1,6 +1,9 @@
 import { Box, Typography, Link } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { personalData } from "../../api/personalData";
 
 function PdFooter() {
+  const { t } = useTranslation();
   return (
     <Box
       component="footer"
@@ -23,14 +26,14 @@ function PdFooter() {
         }}
       >
         <Typography variant="body2">
-          © Developer Portfolio by{" "}
+          © {t("topBar.footer.poweredBy")}{" "}
           <Link
-            href="https://www.linkedin.com/in/abu-said-bd/"
+            href={personalData.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: "#16f2b3" }}
           >
-            Pooria Daloochi
+            {t("topBar.logo")}
           </Link>
         </Typography>
       </Box>

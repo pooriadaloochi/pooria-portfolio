@@ -1,9 +1,12 @@
 import React from "react";
 import { alpha, Box, Typography, useTheme } from "@mui/material";
 import PdGradientDivider from "../../common/PdGradiantDivider";
+import { useTranslation } from "react-i18next";
 
 export default function PdSkillsHeader() {
   const { primary } = useTheme().palette;
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -27,7 +30,7 @@ export default function PdSkillsHeader() {
         }}
       >
         <Typography variant="h6" color="white">
-          Skills
+          {t("topBar.items.skills")}
         </Typography>
       </Box>
     </Box>

@@ -13,16 +13,17 @@ export default function PdSkillSlider() {
         speed={80}
         pauseOnHover={true}
         pauseOnClick={true}
-        delay={0}
+        loop={100}
+        delay={2}
         play={true}
-        direction="left"
+        direction="right"
+        style={{ overflowY: "visible" }}
       >
         {skillsData.map((skill, id) => (
           <Paper
             key={id}
             sx={{
-              width: 144,
-              minWidth: "fit-content",
+              width: 170,
               height: "fit-content",
               display: "flex",
               flexDirection: "column",

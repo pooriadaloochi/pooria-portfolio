@@ -4,27 +4,27 @@ import { TopBarItems } from "./topBarItems.types";
 export function getTopBarItems(t: TFunction): TopBarItems[] {
   return [
     {
-      href: "/about",
+      href: "/#about",
       label: t("topBar.items.about"),
     },
     {
-      href: "/experience",
+      href: "/#experience",
       label: t("topBar.items.experience"),
     },
     {
-      href: "/skills",
+      href: "/#skills",
       label: t("topBar.items.skills"),
     },
     {
-      href: "/education",
+      href: "/#education",
       label: t("topBar.items.education"),
     },
     {
-      href: "/blogs",
+      href: "/#blogs",
       label: t("topBar.items.blogs"),
     },
     {
-      href: "/projects",
+      href: "/#projects",
       label: t("topBar.items.projects"),
     },
   ];

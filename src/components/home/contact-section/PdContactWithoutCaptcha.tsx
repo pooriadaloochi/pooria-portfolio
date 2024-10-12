@@ -12,6 +12,7 @@ import {
   CircularProgress,
   useTheme,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface UserInput {
   name: string;
@@ -31,6 +32,7 @@ export function isValidEmail(email: string): boolean {
 
 const ContactWithoutCaptcha: React.FC = () => {
   const { gradients } = useTheme().palette;
+  const { t } = useTranslation();
   const [error, setError] = useState<ErrorState>({
     email: false,
     required: false,
@@ -82,18 +84,23 @@ const ContactWithoutCaptcha: React.FC = () => {
         contactConfig.YOUR_USER_ID
       );
       if (result.status === 200) {
-        toast.success("Email sent successfully!");
+        toast.success(t("contactMe.form.submit.success"));
         setUserInput({ name: "", email: "", message: "" });
       } else {
-        toast.error("Failed to send email!");
+        toast.error(t("contactMe.form.submit.error"));
       }
     } catch {
-      toast.error("Failed to send email!");
+      toast.error(t("contactMe.form.submit.error"));
     } finally {
       setLoading(false);
     }
   };
-
+  const TextFieldCommonProps = {
+    fullWidth: true,
+    required: true,
+    inputProps: { maxLength: 100 },
+    sx: { bgcolor: "background.default" },
+  };
   return (
     <Box>
       <Typography
@@ -104,7 +111,7 @@ const ContactWithoutCaptcha: React.FC = () => {
         color="primary.main"
         textTransform="uppercase"
       >
-        Contact with me
+        {t("contactMe.title")}
       </Typography>
       <Box
         maxWidth="sm"
@@ -113,46 +120,33 @@ const ContactWithoutCaptcha: React.FC = () => {
         p={3}
         borderRadius={2}
         bgcolor="background.paper"
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-end"
       >
         <Typography variant="body2" color="textPrimary">
-          {
-            "If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."
-          }
+          {t("contactMe.subtitle")}
         </Typography>
         <Grid container spacing={3} mt={3}>
           <Grid item xs={12}>
             <TextField
-              fullWidth
-              label="Your Name"
+              {...TextFieldCommonProps}
               variant="outlined"
+              label={t("contactMe.form.name.label")}
               value={userInput.name}
               required
               onChange={(e) =>
                 setUserInput({ ...userInput, name: e.target.value })
               }
               onBlur={checkRequired}
-              inputProps={{ maxLength: 100 }}
-              sx={{
-                bgcolor: "background.default",
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    // borderColor: "#353a52",
-                  },
-                  "&:hover fieldset": {
-                    // borderColor: "#16f2b3",
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  // color: "#fff",
-                },
-              }}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
-              fullWidth
-              label="Your Email"
+              {...TextFieldCommonProps}
               variant="outlined"
+              fullWidth
+              label={t("contactMe.form.email.label")}
               type="email"
               value={userInput.email}
               required
@@ -166,76 +160,44 @@ const ContactWithoutCaptcha: React.FC = () => {
                   email: !isValidEmail(userInput.email),
                 }));
               }}
+              sx={{ direction: "ltr" }}
               error={error.email}
-              helperText={error.email ? "Please provide a valid email!" : ""}
-              inputProps={{ maxLength: 100 }}
-              sx={{
-                bgcolor: "background.default",
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    // borderColor: "#353a52",
-                  },
-                  "&:hover fieldset": {
-                    // borderColor: "#16f2b3",
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  // color: "#fff",
-                },
-              }}
+              helperText={error.email ? t("contactMe.form.email.error") : ""}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
-              fullWidth
-              label="Your Message"
+              {...TextFieldCommonProps}
               variant="outlined"
+              label={t("contactMe.form.message.label")}
               multiline
               rows={4}
               value={userInput.message}
               required
+              error={error.required}
               onChange={(e) =>
                 setUserInput({ ...userInput, message: e.target.value })
               }
               onBlur={checkRequired}
               inputProps={{ maxLength: 500 }}
-              sx={{
-                bgcolor: "background.default",
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    // borderColor: "#353a52",
-                  },
-                  "&:hover fieldset": {
-                    // borderColor: "#16f2b3",
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  // color: "#fff",
-                },
-              }}
             />
           </Grid>
         </Grid>
         {error.required && (
           <Typography mt={2} color="error" variant="body2">
-            Name, Email, and Message are required!
+            {t("contactMe.form.message.error")}
           </Typography>
         )}
         <Box mt={4} textAlign="center">
           <Button
             onClick={handleSendMail}
             variant="contained"
-            endIcon={
-              loading ? (
-                <CircularProgress size={20} color="inherit" />
-              ) : (
-                <SendIcon />
-              )
-            }
             sx={{
+              width: "fit-content",
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
               background: gradients.primary,
-              px: 4,
-              py: 1.5,
               textTransform: "uppercase",
               transition: "0.3s",
               "&:hover": {
@@ -245,7 +207,13 @@ const ContactWithoutCaptcha: React.FC = () => {
             }}
             disabled={loading}
           >
-            {loading ? <CircularProgress /> : "Send Message"}
+            {loading ? (
+              <CircularProgress size={20} color="inherit" />
+            ) : (
+              <>
+                <SendIcon sx={{ mx: 1 }} /> {t("contactMe.form.submit.label")}
+              </>
+            )}
           </Button>
         </Box>
       </Box>

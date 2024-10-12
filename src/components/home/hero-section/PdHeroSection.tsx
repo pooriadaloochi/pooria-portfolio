@@ -58,7 +58,7 @@ export default function PdHeroSection() {
             fontSize: { xs: "1.25rem", lg: "1.5rem" },
           }}
         >
-          <Typewriter
+          {/* <Typewriter
             options={{
               strings: [
                 t("introData.animated.first"),
@@ -69,7 +69,7 @@ export default function PdHeroSection() {
               loop: true,
               deleteSpeed: 10,
             }}
-          />
+          /> */}
           <Box sx={{ my: 6, display: "flex", alignItems: "center", gap: 2 }}>
             {[
               {

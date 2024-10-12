@@ -1,11 +1,11 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { personalData } from "../../api/personalData";
+import { useTranslation } from "react-i18next";
 
 const ProfileImage = styled("img")({
   width: 280,
   borderRadius: "8px",
+  objectFit: "scale-down",
   transition: "all 1s",
   cursor: "pointer",
   "&:hover": {
@@ -15,45 +15,18 @@ const ProfileImage = styled("img")({
 });
 
 export default function PdAboutSection() {
+  const { t } = useTranslation();
   return (
     <Box
       id="about"
+      display="flex"
+      flexDirection="row"
+      alignItems="center"
       sx={{
         my: { xs: 12, lg: 16 },
         px: { xs: 2, lg: 10 },
-        position: "relative",
       }}
     >
-      {/* Vertical ABOUT ME label */}
-      <Box
-        sx={{
-          display: { xs: "none", lg: "flex" },
-          flexDirection: "column",
-          alignItems: "center",
-          position: "absolute",
-          top: 64,
-          right: 0,
-        }}
-      >
-        <Box
-          sx={{
-            backgroundColor: "primary.main",
-            color: "white",
-            transform: "rotate(90deg)",
-            p: 2,
-            px: 5,
-            fontSize: "1.25rem",
-            borderRadius: "8px",
-            textAlign: "center",
-          }}
-        >
-          ABOUT ME
-        </Box>
-        <Box
-          sx={{ height: 144, width: "2px", backgroundColor: "primary.main" }}
-        />
-      </Box>
-
       {/* About Section Content */}
       <Box
         sx={{
@@ -73,10 +46,10 @@ export default function PdAboutSection() {
               textTransform: "uppercase",
             }}
           >
-            Who I am?
+            {t("about.introduction.title")}
           </Typography>
           <Typography sx={{ fontSize: { xs: "0.875rem", lg: "1.125rem" } }}>
-            {personalData.description}
+            {t("about.introduction.description")}
           </Typography>
         </Box>
 
@@ -84,15 +57,44 @@ export default function PdAboutSection() {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-end",
             order: { xs: 1, lg: 2 },
+            mt: -4,
           }}
         >
           <ProfileImage
             src={"/Profile_Transparent.png"}
-            alt={personalData.name}
+            alt={t("about.introduction.title")}
           />
         </Box>
+      </Box>
+      {/* Vertical ABOUT ME label */}
+      <Box
+        sx={{
+          display: { xs: "none", lg: "flex" },
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            backgroundColor: "primary.main",
+            color: "white",
+            width: 200,
+            height: 62,
+            transform: "rotate(90deg)",
+            p: 2,
+            px: 5,
+            fontSize: "1.25rem",
+            borderRadius: "8px",
+            textAlign: "center",
+          }}
+        >
+          {t("about.title")}
+        </Box>
+        <Box
+          sx={{ height: 144, width: "2px", backgroundColor: "primary.main" }}
+        />
       </Box>
     </Box>
   );

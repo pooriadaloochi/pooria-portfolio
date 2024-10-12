@@ -12,7 +12,7 @@ export default function PdHome() {
   return (
     <Container maxWidth="xl">
       <PdHeroSection />
-      {/* <PdAboutSection /> */}
+      <PdAboutSection />
       {/* <PdExperience /> */}
       {/* <PdSkills /> */}
       {/* <PdProjects /> */}

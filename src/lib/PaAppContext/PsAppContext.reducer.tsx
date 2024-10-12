@@ -16,6 +16,11 @@ export function PaAppContextReducer(
       return { ...state, paletteMode };
     }
 
+    case PaAppContextActionName.SWITCH_LANGUAGE: {
+      setLocalStorageValue({ lang: action.payload });
+      return { ...state, lang: action.payload };
+    }
+
     default:
       throw new Error("Unhandled action type");
   }

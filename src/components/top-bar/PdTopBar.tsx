@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { personalData } from "../../api/personalData";
 import PdSwitchTheme from "./PdSwitchTheme";
+import { PdSwitchLanguage } from "./PdSwitchLanguage";
 
 function PdNavbar() {
   const { background, primary } = useTheme().palette;
@@ -74,6 +75,7 @@ function PdNavbar() {
           ))}
         </Box>
         <PdSwitchTheme />
+        <PdSwitchLanguage />
       </Toolbar>
     </AppBar>
   );

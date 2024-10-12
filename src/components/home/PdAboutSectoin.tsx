@@ -5,10 +5,8 @@ import { personalData } from "../../api/personalData";
 
 const ProfileImage = styled("img")({
   width: 280,
-  height: 280,
   borderRadius: "8px",
   transition: "all 1s",
-  filter: "grayscale(100%)",
   cursor: "pointer",
   "&:hover": {
     filter: "grayscale(0%)",
@@ -18,7 +16,14 @@ const ProfileImage = styled("img")({
 
 export default function PdAboutSection() {
   return (
-    <Box id="about" sx={{ my: { xs: 12, lg: 16 }, position: "relative" }}>
+    <Box
+      id="about"
+      sx={{
+        my: { xs: 12, lg: 16 },
+        px: { xs: 2, lg: 10 },
+        position: "relative",
+      }}
+    >
       {/* Vertical ABOUT ME label */}
       <Box
         sx={{
@@ -27,12 +32,12 @@ export default function PdAboutSection() {
           alignItems: "center",
           position: "absolute",
           top: 64,
-          right: -32,
+          right: 0,
         }}
       >
         <Box
           sx={{
-            backgroundColor: "#1a1443",
+            backgroundColor: "primary.main",
             color: "white",
             transform: "rotate(90deg)",
             p: 2,
@@ -44,7 +49,9 @@ export default function PdAboutSection() {
         >
           ABOUT ME
         </Box>
-        <Box sx={{ height: 144, width: "2px", backgroundColor: "#1a1443" }} />
+        <Box
+          sx={{ height: 144, width: "2px", backgroundColor: "primary.main" }}
+        />
       </Box>
 
       {/* About Section Content */}
@@ -62,18 +69,13 @@ export default function PdAboutSection() {
             sx={{
               fontWeight: "medium",
               mb: 2,
-              color: "#16f2b3",
+              color: "primary.light",
               textTransform: "uppercase",
             }}
           >
             Who I am?
           </Typography>
-          <Typography
-            sx={{
-              color: "gray",
-              fontSize: { xs: "0.875rem", lg: "1.125rem" },
-            }}
-          >
+          <Typography sx={{ fontSize: { xs: "0.875rem", lg: "1.125rem" } }}>
             {personalData.description}
           </Typography>
         </Box>
@@ -86,7 +88,10 @@ export default function PdAboutSection() {
             order: { xs: 1, lg: 2 },
           }}
         >
-          <ProfileImage src={personalData.profile} alt="Abu Said" />
+          <ProfileImage
+            src={"/Profile_Transparent.png"}
+            alt={personalData.name}
+          />
         </Box>
       </Box>
     </Box>

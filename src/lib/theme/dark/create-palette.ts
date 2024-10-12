@@ -1,17 +1,18 @@
-import type { PaletteOptions } from '@mui/material/styles';
-import { alpha } from '@mui/material/styles';
-import { neutral } from '../neutral-colors';
+import type { PaletteOptions } from "@mui/material/styles";
+import { alpha } from "@mui/material/styles";
+import { neutral } from "../neutral-colors";
 import {
   secondary,
   primary,
   error,
   info,
   success,
+  gradients,
   warning,
   backgroundColor,
   textColors,
   grey,
-} from './dark-theme-colors';
+} from "./dark-theme-colors";
 
 export const createPalette = (): PaletteOptions => {
   return {
@@ -30,8 +31,9 @@ export const createPalette = (): PaletteOptions => {
     divider: neutral[300],
     error,
     info,
-    mode: 'dark',
+    mode: "dark",
     mono: { dark: neutral[900], light: neutral[0] },
+    gradients,
     primary,
     secondary,
     success,

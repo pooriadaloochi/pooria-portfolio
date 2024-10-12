@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Typography, Divider, Grid, Stack } from "@mui/material";
+import { Box, Divider, Stack, useTheme } from "@mui/material";
 import { useCoder } from "../../lib/hooks/useCoder";
 
 export interface DataProps {
@@ -14,16 +13,18 @@ interface CoderCardProps {
 
 export default function PdCoderCard({ title, data }: CoderCardProps) {
   const { getCoderValue } = useCoder();
+  const { background } = useTheme().palette;
+
   return (
     <Box
-      className="coder-card"
       sx={{
-        order: { lg: 2, xs: 1 },
-        borderRadius: "16px",
-        border: "1px solid #1b2c68a0",
-        bgcolor: "background.paper",
-        boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
-        overflow: "hidden",
+        direction: "ltr",
+        order: { xs: 1, lg: 2 },
+        border: `2px solid ${background.paper}`,
+        borderRadius: "8px",
+        backgroundImage: `linear-gradient(to right, ${background.default}, ${background.paper})`,
+        position: "relative",
+        boxShadow: "0 0 100px 0 rgba(0, 0, 0, 0.1)",
       }}
     >
       {/* Top Borders */}
@@ -115,5 +116,3 @@ export default function PdCoderCard({ title, data }: CoderCardProps) {
     </Box>
   );
 }
-
-// Usage Example

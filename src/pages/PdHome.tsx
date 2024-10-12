@@ -4,12 +4,13 @@ import PdEducation from "../components/home/education/PdEducation";
 import PdAboutSection from "../components/home/PdAboutSectoin";
 import PdExperience from "../components/home/PdExperience";
 import PdHeroSection from "../components/home/hero-section/PdHeroSection";
-import PdSkills from "../components/home/PdSkill";
+import PdSkills from "../components/home/skills/PdSkills";
 import PdProjects from "../components/home/projects/projects";
+import { Container } from "@mui/material";
 
 export default function PdHome() {
   return (
-    <>
+    <Container maxWidth="xl">
       <PdHeroSection />
       {/* <PdAboutSection /> */}
       {/* <PdExperience /> */}
@@ -17,7 +18,7 @@ export default function PdHome() {
       {/* <PdProjects /> */}
       {/* <PdEducation /> */}
       {/* <PdBlogs blogs={[]} /> */}
-      <PdContactSection />
-    </>
+      {/* <PdContactSection /> */}
+    </Container>
   );
 }

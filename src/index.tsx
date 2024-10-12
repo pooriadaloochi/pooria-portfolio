@@ -17,13 +17,12 @@ const APP_CONTEXT_INITIAL_STATE: PaAppContextState = {
   ...getLocalStorageAppSettings(),
 };
 
-
 root.render(
   <HelmetProvider>
     <BrowserRouter>
       <Suspense>
-      <PaAppContextProvider initialState={APP_CONTEXT_INITIAL_STATE}>
-        <App />
+        <PaAppContextProvider initialState={APP_CONTEXT_INITIAL_STATE}>
+          <App />
         </PaAppContextProvider>
       </Suspense>
     </BrowserRouter>

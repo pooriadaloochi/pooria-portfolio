@@ -1,0 +1,9 @@
+import { common } from "./tokens";
+
+const t = common;
+
+export const commonFA = {
+  [t.languages.en]: "انگلیسی",
+  [t.languages.fa]: "فارسی",
+  [t.languages.de]: "آلمانی",
+};

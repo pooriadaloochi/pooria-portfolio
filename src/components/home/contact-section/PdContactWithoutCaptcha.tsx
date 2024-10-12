@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import { toast } from "react-toastify";
+import * as emailjs from "emailjs-com";
+
 import {
   Box,
   Typography,
@@ -8,6 +10,7 @@ import {
   Button,
   Grid,
   CircularProgress,
+  useTheme,
 } from "@mui/material";
 
 interface UserInput {
@@ -27,6 +30,7 @@ export function isValidEmail(email: string): boolean {
 }
 
 const ContactWithoutCaptcha: React.FC = () => {
+  const { gradients } = useTheme().palette;
   const [error, setError] = useState<ErrorState>({
     email: false,
     required: false,
@@ -55,36 +59,39 @@ const ContactWithoutCaptcha: React.FC = () => {
       setError((prev) => ({ ...prev, required: false }));
     }
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
-    const options = {
-      publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
+    const contactConfig = {
+      YOUR_EMAIL: "pooriadaloochi@gmail.com",
+      description:
+        "Feel free to reach out if you'd like to collaborate or learn more about my work.",
+      YOUR_SERVICE_ID: "service_3qdo8nc",
+      YOUR_TEMPLATE_ID: "template_95q3iru",
+      YOUR_USER_ID: "_8sWtHy70luck1ejJ",
     };
-
-    // setLoading(true);
-    // try {
-    //   // Simulate the send email function (use actual emailJS send function in practice)
-    //   const res = await emailjs.send(serviceID, templateID, userInput, options);
-    //   const teleRes = await axios.post(
-    //     `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
-    //     userInput
-    //   );
-
-    //   if (res.status === 200 || teleRes.status === 200) {
-    //     toast.success("Message sent successfully!");
-    //     setUserInput({
-    //       name: "",
-    //       email: "",
-    //       message: "",
-    //     });
-    //   }
-    // } catch (error: any) {
-    //   toast.error(
-    //     error?.text || "An error occurred while sending the message."
-    //   );
-    // } finally {
-    //   setLoading(false);
-    // }
+    const templateParams = {
+      from_name: userInput.email,
+      user_name: userInput.name,
+      to_name: contactConfig.YOUR_EMAIL,
+      message: userInput.message,
+    };
+    try {
+      setLoading(true);
+      const result = await emailjs.send(
+        contactConfig.YOUR_SERVICE_ID,
+        contactConfig.YOUR_TEMPLATE_ID,
+        templateParams,
+        contactConfig.YOUR_USER_ID
+      );
+      if (result.status === 200) {
+        toast.success("Email sent successfully!");
+        setUserInput({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Failed to send email!");
+      }
+    } catch {
+      toast.error("Failed to send email!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -94,7 +101,7 @@ const ContactWithoutCaptcha: React.FC = () => {
         component="p"
         fontWeight="medium"
         mb={5}
-        color="#16f2b3"
+        color="primary.main"
         textTransform="uppercase"
       >
         Contact with me
@@ -102,12 +109,12 @@ const ContactWithoutCaptcha: React.FC = () => {
       <Box
         maxWidth="sm"
         border={1}
-        borderColor="#464c6a"
+        borderColor="grey.800"
         p={3}
         borderRadius={2}
-        bgcolor="#10172d"
+        bgcolor="background.paper"
       >
-        <Typography variant="body2" color="#d3d8e8">
+        <Typography variant="body2" color="textPrimary">
           {
             "If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."
           }
@@ -126,17 +133,17 @@ const ContactWithoutCaptcha: React.FC = () => {
               onBlur={checkRequired}
               inputProps={{ maxLength: 100 }}
               sx={{
-                bgcolor: "#10172d",
+                bgcolor: "background.default",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#353a52",
+                    // borderColor: "#353a52",
                   },
                   "&:hover fieldset": {
-                    borderColor: "#16f2b3",
+                    // borderColor: "#16f2b3",
                   },
                 },
                 "& .MuiInputBase-input": {
-                  color: "#fff",
+                  // color: "#fff",
                 },
               }}
             />
@@ -163,17 +170,17 @@ const ContactWithoutCaptcha: React.FC = () => {
               helperText={error.email ? "Please provide a valid email!" : ""}
               inputProps={{ maxLength: 100 }}
               sx={{
-                bgcolor: "#10172d",
+                bgcolor: "background.default",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#353a52",
+                    // borderColor: "#353a52",
                   },
                   "&:hover fieldset": {
-                    borderColor: "#16f2b3",
+                    // borderColor: "#16f2b3",
                   },
                 },
                 "& .MuiInputBase-input": {
-                  color: "#fff",
+                  // color: "#fff",
                 },
               }}
             />
@@ -193,17 +200,17 @@ const ContactWithoutCaptcha: React.FC = () => {
               onBlur={checkRequired}
               inputProps={{ maxLength: 500 }}
               sx={{
-                bgcolor: "#10172d",
+                bgcolor: "background.default",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#353a52",
+                    // borderColor: "#353a52",
                   },
                   "&:hover fieldset": {
-                    borderColor: "#16f2b3",
+                    // borderColor: "#16f2b3",
                   },
                 },
                 "& .MuiInputBase-input": {
-                  color: "#fff",
+                  // color: "#fff",
                 },
               }}
             />
@@ -226,20 +233,19 @@ const ContactWithoutCaptcha: React.FC = () => {
               )
             }
             sx={{
-              background: "linear-gradient(to right, #f50057, #3f51b5)",
+              background: gradients.primary,
               px: 4,
               py: 1.5,
               textTransform: "uppercase",
-              transition: "all 0.3s",
+              transition: "0.3s",
               "&:hover": {
-                background: "linear-gradient(to right, #3f51b5, #f50057)",
+                background: gradients.secondary,
               },
               fontWeight: "bold",
-              color: "#fff",
             }}
             disabled={loading}
           >
-            Send Message
+            {loading ? <CircularProgress /> : "Send Message"}
           </Button>
         </Box>
       </Box>

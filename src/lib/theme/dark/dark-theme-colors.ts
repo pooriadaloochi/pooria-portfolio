@@ -106,7 +106,11 @@ export const grey: GreyColors = {
 };
 
 export const gradients = {
-  purple: "linear-gradient(90deg, #7517F8 0%, #E323FF 100%)",
-  darkUltramarine: "linear-gradient(90deg, #02A4FF 0%, #7D40FF 100%)",
-  lightBruise: "linear-gradient(90deg, #4DA1FF 0%, #4DFFDF 100%)",
+  primary: `linear-gradient(to right, ${primary.light} 0%, ${primary.dark} 100%)`,
+  secondary: `linear-gradient(to right, ${secondary.light} 0%, ${secondary.dark} 100%)`,
+  success: `linear-gradient(to right, ${success.light} 0%, ${success.dark} 100%)`,
+  info: `linear-gradient(to right, ${info.light} 0%, ${info.dark} 100%)`,
+  warning: `linear-gradient(to right, ${warning.light} 0%, ${warning.dark} 100%)`,
+  error: `linear-gradient(to right, ${error.light} 0%, ${error.dark} 100%)`,
+  blue: `linear-gradient(to right, ${blue.light} 0%, ${blue.dark} 100%)`,
 };

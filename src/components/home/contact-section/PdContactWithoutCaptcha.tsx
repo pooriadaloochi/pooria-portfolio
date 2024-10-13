@@ -11,6 +11,7 @@ import {
   Grid,
   CircularProgress,
   useTheme,
+  Stack,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -102,7 +103,7 @@ const ContactWithoutCaptcha: React.FC = () => {
     sx: { bgcolor: "background.default" },
   };
   return (
-    <Box>
+    <Stack justifyContent="center">
       <Typography
         variant="h6"
         component="p"
@@ -110,6 +111,7 @@ const ContactWithoutCaptcha: React.FC = () => {
         mb={5}
         color="primary.main"
         textTransform="uppercase"
+        textAlign={{ xs: "center", lg: "left" }}
       >
         {t("contactMe.title")}
       </Typography>
@@ -122,7 +124,7 @@ const ContactWithoutCaptcha: React.FC = () => {
         bgcolor="background.paper"
         display="flex"
         flexDirection="column"
-        alignItems="flex-end"
+        mx={{ xs: "auto", lg: 0 }}
       >
         <Typography variant="body2" color="textPrimary">
           {t("contactMe.subtitle")}
@@ -217,7 +219,7 @@ const ContactWithoutCaptcha: React.FC = () => {
           </Button>
         </Box>
       </Box>
-    </Box>
+    </Stack>
   );
 };
 

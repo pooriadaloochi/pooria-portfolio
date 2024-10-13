@@ -3,7 +3,7 @@ import { IconButton } from "@mui/material";
 import {
   usePaAppContextActions,
   usePaAppContextState,
-} from "../../lib/PaAppContext";
+} from "../../../lib/PaAppContext";
 
 export default function PdSwitchTheme() {
   const { paletteMode } = usePaAppContextState();

@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 export default function PdContactSection() {
   return (
     <Box id="contact" my={12} mt={24} color="white">
-      <Grid container alignItems="center">
+      <Grid container alignItems="center" spacing={4}>
         <Grid item xs={12} lg={6}>
           {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY &&
           process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY ? (
@@ -23,8 +23,14 @@ export default function PdContactSection() {
           )}
         </Grid>
 
-        <Grid item xs={12} lg={6} position="relative" sx={{direction:"ltr"}}>
-          <Box display="flex" flexDirection="column" gap={4}>
+        <Grid item xs={12} lg={6} position="relative" sx={{ direction: "ltr" }}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            gap={4}
+            width={{ xs: "fit-content", lg: "70%" }}
+            mx={{ xs: "auto", lg: 0 }}
+          >
             <Box display="flex" alignItems="center" gap={3}>
               <AlternateEmailIcon
                 sx={{
@@ -87,57 +93,57 @@ export default function PdContactSection() {
                 {personalData.address}
               </Typography>
             </Box>
+            <Box mt={8} display="flex" gap={3}>
+              <Link to={personalData.github} target="_blank">
+                <IconButton
+                  sx={{
+                    backgroundColor: "primary.main",
+                    transition: "all 0.3s",
+                    "&:hover": {
+                      backgroundColor: "#16f2b3",
+                      transform: "scale(1.1)",
+                    },
+                    color: "white",
+                  }}
+                >
+                  <GitHubIcon fontSize="large" />
+                </IconButton>
+              </Link>
+
+              <Link to={personalData.linkedIn} target="_blank">
+                <IconButton
+                  sx={{
+                    backgroundColor: "primary.main",
+                    transition: "all 0.3s",
+                    "&:hover": {
+                      backgroundColor: "#16f2b3",
+                      transform: "scale(1.1)",
+                    },
+                    color: "white",
+                  }}
+                >
+                  <LinkedInIcon fontSize="large" />
+                </IconButton>
+              </Link>
+
+              <Link to={personalData.stackOverflow} target="_blank">
+                <IconButton
+                  sx={{
+                    backgroundColor: "primary.main",
+                    transition: "all 0.3s",
+                    "&:hover": {
+                      backgroundColor: "#16f2b3",
+                      transform: "scale(1.1)",
+                    },
+                    color: "white",
+                  }}
+                >
+                  <StackOverflowIcon fontSize="large" />
+                </IconButton>
+              </Link>
+            </Box>
           </Box>
 
-          <Box mt={8} display="flex" gap={3}>
-            <Link to={personalData.github} target="_blank">
-              <IconButton
-                sx={{
-                  backgroundColor: "primary.main",
-                  transition: "all 0.3s",
-                  "&:hover": {
-                    backgroundColor: "#16f2b3",
-                    transform: "scale(1.1)",
-                  },
-                  color: "white",
-                }}
-              >
-                <GitHubIcon fontSize="large" />
-              </IconButton>
-            </Link>
-
-            <Link to={personalData.linkedIn} target="_blank">
-              <IconButton
-                sx={{
-                  backgroundColor: "primary.main",
-                  transition: "all 0.3s",
-                  "&:hover": {
-                    backgroundColor: "#16f2b3",
-                    transform: "scale(1.1)",
-                  },
-                  color: "white",
-                }}
-              >
-                <LinkedInIcon fontSize="large" />
-              </IconButton>
-            </Link>
-
-            <Link to={personalData.stackOverflow} target="_blank">
-              <IconButton
-                sx={{
-                  backgroundColor: "primary.main",
-                  transition: "all 0.3s",
-                  "&:hover": {
-                    backgroundColor: "#16f2b3",
-                    transform: "scale(1.1)",
-                  },
-                  color: "white",
-                }}
-              >
-                <StackOverflowIcon fontSize="large" />
-              </IconButton>
-            </Link>
-          </Box>
           {/* <Box
             display={{ lg: "flex", xs: "none" }}
             flexDirection="column"

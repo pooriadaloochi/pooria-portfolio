@@ -57,7 +57,7 @@ export default function PdAboutSection() {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "center",
             order: { xs: 1, lg: 2 },
             mt: -4,
           }}

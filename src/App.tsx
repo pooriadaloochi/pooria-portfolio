@@ -6,7 +6,7 @@ import { usePaAppContextState } from "./lib/PaAppContext";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getMuiLanguageValue } from "./lib/helper/getMuiLanguageValue";
 import { createTheme } from "./lib/theme";
 
@@ -19,7 +19,7 @@ import { LocalesEnum } from "./lib/locales/i18.types";
 function App() {
   const element = useRoutes(routes);
   const { paletteMode, lang } = usePaAppContextState();
-
+  const [loading, setLoading] = useState(true);
   const theme = useMemo(
     () =>
       createTheme({
@@ -35,6 +35,12 @@ function App() {
     document.body.dir = lang === LocalesEnum.FA ? "rtl" : "ltr";
   }, [lang]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -43,7 +49,7 @@ function App() {
       </Helmet>
       <CssBaseline />
       <ToastContainer position="bottom-left" theme="colored" />
-      {false ? <SplashScreen /> : <>{element}</>}
+      {loading ? <SplashScreen /> : <>{element}</>}
     </ThemeProvider>
   );
 }

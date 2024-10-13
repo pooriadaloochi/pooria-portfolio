@@ -1,5 +1,14 @@
-import type { FC } from "react";
-import { Box } from "@mui/material";
+import { FC } from "react";
+import { Box, keyframes } from "@mui/material";
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const SplashScreen: FC = () => (
   <Box
@@ -21,11 +30,14 @@ export const SplashScreen: FC = () => (
     <Box
       sx={{
         display: "inline-flex",
-        height: 48,
-        width: 48,
+        borderRadius: "50%",
+        overflow: "hidden",
+        width: 100,
+        height: 100,
+        animation: `${spin} 2s linear infinite`,
       }}
     >
-      Loading...
+      <img src="/logo.png" alt="logo" />
     </Box>
   </Box>
 );

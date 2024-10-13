@@ -2,6 +2,7 @@ import type { RouteObject } from "react-router-dom";
 import { Navigate, Outlet } from "react-router-dom";
 import { Layout } from "../components/layout/layout";
 import PdHome from "./PdHome";
+import Page404 from "./404";
 
 export const routes: RouteObject[] = [
   {
@@ -10,7 +11,7 @@ export const routes: RouteObject[] = [
         <Outlet />
       </Layout>
     ),
-    // Partner Pages
+    // Pages
     children: [
       {
         path: "/",
@@ -18,18 +19,13 @@ export const routes: RouteObject[] = [
       },
     ],
   },
-  // Common Pages
-  {
-    path: "401",
-    element: <Layout>401</Layout>,
-  },
   {
     path: "404",
-    element: <Layout>404</Layout>,
-  },
-  {
-    path: "500",
-    element: <Layout>500</Layout>,
+    element: (
+      <Layout>
+        <Page404 />
+      </Layout>
+    ),
   },
   {
     path: "*",

@@ -15,7 +15,6 @@ export default function HeroIcon({
   return (
     <svg
       width="100%"
-      height="100hv"
       viewBox="0 0 1572 795"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

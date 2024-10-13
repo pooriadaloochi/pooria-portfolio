@@ -61,28 +61,27 @@ const ContactWithoutCaptcha: React.FC = () => {
     } else {
       setError((prev) => ({ ...prev, required: false }));
     }
-
     const contactConfig = {
-      YOUR_EMAIL: "pooriadaloochi@gmail.com",
-      description:
-        "Feel free to reach out if you'd like to collaborate or learn more about my work.",
-      YOUR_SERVICE_ID: "service_3qdo8nc",
-      YOUR_TEMPLATE_ID: "template_95q3iru",
-      YOUR_USER_ID: "_8sWtHy70luck1ejJ",
+      yourEmail: process.env.REACT_APP_YOUR_EMAIL,
+      description: process.env.REACT_APP_YOUR_DESCRIPTION ?? "",
+      yourServiceId: process.env.REACT_APP_YOUR_SERVICE_ID ?? "",
+      yourTemplateId: process.env.REACT_APP_YOUR_TEMPLATE_ID ?? "",
+      yourUserId: process.env.REACT_APP_YOUR_USER_ID,
     };
+
     const templateParams = {
       from_name: userInput.email,
       user_name: userInput.name,
-      to_name: contactConfig.YOUR_EMAIL,
+      to_name: contactConfig.yourEmail,
       message: userInput.message,
     };
     try {
       setLoading(true);
       const result = await emailjs.send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
+        contactConfig.yourServiceId,
+        contactConfig.yourTemplateId,
         templateParams,
-        contactConfig.YOUR_USER_ID
+        contactConfig.yourUserId
       );
       if (result.status === 200) {
         toast.success(t("contactMe.form.submit.success"));

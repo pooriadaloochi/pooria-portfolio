@@ -14,4 +14,5 @@ export const commonDE = {
   [t.Page404.description]:
     "Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben.",
   [t.Page404.goBack]: "Zurück zur Homepage",
+  [t.experiences.title]: "Erfahrungen",
 };

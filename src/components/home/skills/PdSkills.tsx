@@ -1,8 +1,11 @@
 import Box from "@mui/material/Box";
-import PdSkillsHeader from "./PdSkillsHeader";
 import PdSkillSlider from "./PdSkillSlider";
+import PdSectionHeader from "../../section-header/PsSectionHeader";
+import { useTranslation } from "react-i18next";
 
 export default function PdSkills() {
+  const { t } = useTranslation();
+
   return (
     <Box
       id="skills"
@@ -12,7 +15,7 @@ export default function PdSkills() {
         my: { xs: 12, lg: 24 },
       }}
     >
-      <PdSkillsHeader />
+      <PdSectionHeader title={t("topBar.items.skills")} />
       <PdSkillSlider />
     </Box>
   );

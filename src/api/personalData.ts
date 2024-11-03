@@ -7,29 +7,45 @@ export const personalData = {
   designation: "Senior Full Stack Developer",
   github: "https://github.com/pooriadaloochi",
   linkedIn: "https://www.linkedin.com/in/pooriadaloochi",
-  resume: "", // Add your resume link if applicable
   description:
     "As a Senior Full-Stack Developer with over 7 years of experience, I excel in developing high-performance Single-Page Applications using modern technologies, including React.js, JavaScript, Next.js, TypeScript, HTML, and CSS. I have a strong background in creating intuitive user interfaces and integrating robust APIs such as REST and GraphQL, ensuring seamless, responsive experiences, which have led to increased user engagement and operational efficiency.",
-  profile: "/image/Profile_Transparent.png"
+  profile: "/image/Profile_Transparent.png",
 };
 
 export const experiences = [
   {
     id: 1,
-    title: "Software Engineer I",
-    company: "Teton Private Ltd.",
-    duration: "(Jan 2022 - Present)",
+    title: "Senior Full-Stack Developer",
+    company: "Tradevest GmbH",
+    image: "/assets/companies/tradevest.JPEG",
+    duration: "(May 2023 - Present)",
   },
   {
     id: 2,
-    title: "FullStack Developer",
-    company: "Fiverr (freelance)",
-    duration: "(Jun 2021 - Jan 2022)",
+    title: "Senior Front-End Developer",
+    company: "Sponixtech",
+    image: "/assets/companies/Sponix.png",
+    duration: "(Dec 2019 - Apr 2023)",
   },
   {
     id: 3,
-    title: "Self Employed",
-    company: "Code and build something in everyday.",
-    duration: "(Jan 2018 - Present)",
+    title: "Front-End Developer",
+    company: "Partodadeh",
+    image: "/assets/companies/partodadeh.png",
+    duration: "(Jun 2018 - Nov 2019)",
+  },
+  {
+    id: 4,
+    title: "Front-End Developer",
+    company: "ClickHub",
+    image: "/assets/companies/Clickub.jpeg",
+    duration: "(Jan 2017 - May 2018)",
+  },
+  {
+    id: 5,
+    title: "Freelance Projects",
+    company: "Various Clients",
+    image: "/assets/companies/Personal.png",
+    duration: "(Feb 2018 - Jan 2020)",
   },
 ];

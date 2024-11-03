@@ -1,7 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 import Marquee from "react-fast-marquee";
 import { skillsData } from "../../../api/skills";
-import PdGradientDivider from "../../common/PdGradiantDivider";
+import PdGradientDivider from "../../common/PdGradientDivider";
 import { skillsImage } from "../../../api/skill/skill-image";
 import { grey } from "../../../lib/theme/dark/dark-theme-colors";
 

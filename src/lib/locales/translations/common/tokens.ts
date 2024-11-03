@@ -15,4 +15,7 @@ export const common = {
     description: "common.Page404.description",
     goBack: "common.Page404.goBack",
   },
+  experiences: {
+    title: "common.experiences.title",
+  },
 } as const;

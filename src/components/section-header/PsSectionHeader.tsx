@@ -1,11 +1,12 @@
-import React from "react";
 import { alpha, Box, Typography, useTheme } from "@mui/material";
-import PdGradientDivider from "../../common/PdGradiantDivider";
-import { useTranslation } from "react-i18next";
+import PdGradientDivider from "../common/PdGradientDivider";
 
-export default function PdSkillsHeader() {
+interface PdSectionHeaderProps {
+  title: string;
+}
+
+export default function PdSectionHeader({ title }: PdSectionHeaderProps) {
   const { primary } = useTheme().palette;
-  const { t } = useTranslation();
 
   return (
     <Box
@@ -30,7 +31,7 @@ export default function PdSkillsHeader() {
         }}
       >
         <Typography variant="h6" color="white">
-          {t("topBar.items.skills")}
+          {title}
         </Typography>
       </Box>
     </Box>

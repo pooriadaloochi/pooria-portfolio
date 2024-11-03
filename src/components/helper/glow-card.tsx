@@ -1,85 +1,58 @@
-import { useEffect } from "react";
+import { Box } from "@mui/material";
+import { alpha, styled } from "@mui/material/styles";
+import { ReactNode } from "react";
 
-const GlowCard = ({ children, identifier }: any) => {
-  useEffect(() => {
-    const CONTAINER = document.querySelector(
-      `.glow-container-${identifier}`
-    ) as HTMLElement | null;
-    const CARDS = document.querySelectorAll(
-      `.glow-card-${identifier}`
-    ) as NodeListOf<HTMLElement>;
+const StyledGlowCard = styled(Box)(({ theme }) => ({
+  width: "100%",
+  position: "relative",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: theme.spacing(3),
+  backgroundColor: theme.palette.background.paper,
+  color: theme.palette.grey[300],
+  borderRadius: theme.spacing(3),
+  border: `1px solid ${alpha(theme.palette.grey[500], 0.5)}`,
+  boxShadow: `0px 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
+  transition: "transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease",
+  cursor: "pointer",
+  overflow: "hidden",
+  maxWidth: "620px",
+  "&:hover": {
+    transform: "translateY(-10px)",
+    boxShadow: `0px 20px 40px ${alpha(theme.palette.primary.main, 0.3)}`,
+    borderColor: alpha(theme.palette.primary.main, 0.8),
+  },
+  "&:hover .glows": {
+    opacity: 1,
+  },
+  "& .glows": {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    pointerEvents: "none",
+    background:
+      `radial-gradient(circle, ${alpha(theme.palette.primary.main, .7)}, transparent 70%)`,
+    borderRadius: "inherit",
+    opacity: 0,
+    transition: "opacity 0.3s ease",
+    zIndex: -1,
+  },
+}));
 
-    const CONFIG = {
-      proximity: 40,
-      spread: 80,
-      blur: 12,
-      gap: 32,
-      vertical: false,
-      opacity: 0,
-    };
+interface GlowCardProps {
+  children: ReactNode;
+}
 
-    const UPDATE = (event: PointerEvent) => {
-      CARDS.forEach((CARD) => {
-        const CARD_BOUNDS = CARD.getBoundingClientRect();
-
-        if (
-          event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
-          event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
-          event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
-          event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
-        ) {
-          CARD.style.setProperty("--active", "1");
-        } else {
-          CARD.style.setProperty("--active", CONFIG.opacity.toString());
-        }
-
-        const CARD_CENTER = [
-          CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
-          CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5,
-        ];
-
-        let ANGLE =
-          (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
-            180) /
-          Math.PI;
-
-        ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
-
-        CARD.style.setProperty("--start", `${ANGLE + 90}`);
-      });
-    };
-
-    document.body.addEventListener("pointermove", UPDATE);
-
-    const RESTYLE = () => {
-      if (CONTAINER) {
-        CONTAINER.style.setProperty("--gap", CONFIG.gap.toString());
-        CONTAINER.style.setProperty("--blur", CONFIG.blur.toString());
-        CONTAINER.style.setProperty("--spread", CONFIG.spread.toString());
-        CONTAINER.style.setProperty(
-          "--direction",
-          CONFIG.vertical ? "column" : "row"
-        );
-      }
-    };
-
-    RESTYLE();
-
-    // Cleanup event listener
-    return () => {
-      document.body.removeEventListener("pointermove", UPDATE);
-    };
-  }, [identifier]);
-
+const GlowCard = ({ children }: GlowCardProps) => {
   return (
-    <div className={`glow-container-${identifier} glow-container`}>
-      <article
-        className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}
-      >
-        <div className="glows"></div>
-        {children}
-      </article>
-    </div>
+    <StyledGlowCard>
+      <div className="glows" />
+      {children}
+    </StyledGlowCard>
   );
 };
 

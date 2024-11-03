@@ -14,4 +14,5 @@ export const commonFA = {
   [t.Page404.description]:
     "صفحه‌ای که به دنبال آن هستید وجود ندارد یا منتقل شده است.",
   [t.Page404.goBack]: "بازگشت به صفحه اصلی",
+  [t.experiences.title]: "تجربیات",
 };

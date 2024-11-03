@@ -2,7 +2,7 @@ export const personalData = {
   name: "Pooria Daloochi",
   email: "pooriadaloochi@gmail.com",
   phone: "+491723557436",
-  address: "Munic, Germany",
+  address: "Munich, Germany",
   stackOverflow: "https://stackoverflow.com/users/15670864/pooria-daloochi",
   designation: "Senior Full Stack Developer",
   github: "https://github.com/pooriadaloochi",

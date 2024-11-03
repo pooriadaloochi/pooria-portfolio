@@ -3,7 +3,7 @@ import PdSkillSlider from "./PdSkillSlider";
 import PdSectionHeader from "../../section-header/PsSectionHeader";
 import { useTranslation } from "react-i18next";
 
-export default function PdSkills() {
+export default function PdSkillsSection() {
   const { t } = useTranslation();
 
   return (

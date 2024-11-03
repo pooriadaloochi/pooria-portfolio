@@ -1,31 +1,40 @@
 import { TFunction } from "i18next";
 import { TopBarItems } from "./topBarItems.types";
+import { PATHS } from "../../../pages/paths";
 
 export function getTopBarItems(t: TFunction): TopBarItems[] {
   return [
     {
-      href: "/#about",
+      href: PATHS.HOME,
+      label: t("topBar.items.home"),
+    },
+    {
+      href: PATHS.ABOUT,
       label: t("topBar.items.about"),
     },
     {
-      href: "/#experience",
+      href: PATHS.EXPERIENCE,
       label: t("topBar.items.experience"),
     },
     {
-      href: "/#skills",
+      href: PATHS.SKILLS,
       label: t("topBar.items.skills"),
     },
+    // {
+    //   href: "/education",
+    //   label: t("topBar.items.education"),
+    // },
+    // {
+    //   href: "/blogs",
+    //   label: t("topBar.items.blogs"),
+    // },
+    // {
+    //   href: "/projects",
+    //   label: t("topBar.items.projects"),
+    // },
     {
-      href: "/#education",
-      label: t("topBar.items.education"),
-    },
-    {
-      href: "/#blogs",
-      label: t("topBar.items.blogs"),
-    },
-    {
-      href: "/#projects",
-      label: t("topBar.items.projects"),
+      href: PATHS.CONTACT,
+      label: t("topBar.items.contact"),
     },
   ];
 }

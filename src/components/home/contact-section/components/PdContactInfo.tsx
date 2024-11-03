@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import StackOverflowIcon from "@mui/icons-material/Help";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import {
   LocationOn,
   AlternateEmail,
 } from "@mui/icons-material";
+import { ReactNode } from "react";
 
 interface PdContactInfoProps {
   email: string;
@@ -18,6 +19,23 @@ interface PdContactInfoProps {
   linkedIn: string;
   stackOverflow: string;
 }
+const ContactButton = ({ icon }: { icon: ReactNode }) => {
+  return (
+    <IconButton
+      sx={{
+        backgroundColor: "primary.main",
+        transition: "all 0.3s",
+        "&:hover": {
+          backgroundColor: "primary.light",
+          transform: "scale(1.1)",
+        },
+        color: "white",
+      }}
+    >
+      {icon}
+    </IconButton>
+  );
+};
 
 export function PdContactInfo({
   address,
@@ -36,114 +54,34 @@ export function PdContactInfo({
       mx={{ xs: "auto", lg: 0 }}
     >
       <Box display="flex" alignItems="center" gap={3}>
-        <AlternateEmail
-          sx={{
-            backgroundColor: "primary.main",
-            p: 1,
-            borderRadius: "50%",
-            transition: "all 0.3s",
-            "&:hover": {
-              backgroundColor: "#16f2b3",
-              transform: "scale(1.1)",
-            },
-            color: "white",
-            cursor: "pointer",
-          }}
-          fontSize="large"
-        />
+        <ContactButton icon={<AlternateEmail fontSize="medium" />} />
         <Typography color="textPrimary" variant="body1">
           {email}
         </Typography>
       </Box>
 
       <Box display="flex" alignItems="center" gap={3}>
-        <Call
-          sx={{
-            backgroundColor: "primary.main",
-            p: 1,
-            borderRadius: "50%",
-            transition: "all 0.3s",
-            "&:hover": {
-              backgroundColor: "#16f2b3",
-              transform: "scale(1.1)",
-            },
-            color: "white",
-            cursor: "pointer",
-          }}
-          fontSize="large"
-        />
+        <ContactButton icon={<Call fontSize="medium" />} />
         <Typography color="textPrimary" variant="body1">
           {phone}
         </Typography>
       </Box>
 
       <Box display="flex" alignItems="center" gap={3}>
-        <LocationOn
-          sx={{
-            backgroundColor: "primary.main",
-            p: 1,
-            borderRadius: "50%",
-            transition: "all 0.3s",
-            "&:hover": {
-              backgroundColor: "#16f2b3",
-              transform: "scale(1.1)",
-            },
-            color: "white",
-            cursor: "pointer",
-          }}
-          fontSize="large"
-        />
+        <ContactButton icon={<LocationOn fontSize="medium" />} />
         <Typography color="textPrimary" variant="body1">
           {address}
         </Typography>
       </Box>
       <Box mt={8} display="flex" gap={3}>
         <Link to={github} target="_blank">
-          <IconButton
-            sx={{
-              backgroundColor: "primary.main",
-              transition: "all 0.3s",
-              "&:hover": {
-                backgroundColor: "#16f2b3",
-                transform: "scale(1.1)",
-              },
-              color: "white",
-            }}
-          >
-            <GitHub fontSize="large" />
-          </IconButton>
+          <ContactButton icon={<GitHub fontSize="large" />} />
         </Link>
-
         <Link to={linkedIn} target="_blank">
-          <IconButton
-            sx={{
-              backgroundColor: "primary.main",
-              transition: "all 0.3s",
-              "&:hover": {
-                backgroundColor: "#16f2b3",
-                transform: "scale(1.1)",
-              },
-              color: "white",
-            }}
-          >
-            <LinkedIn fontSize="large" />
-          </IconButton>
+          <ContactButton icon={<LinkedIn fontSize="large" />} />
         </Link>
-
         <Link to={stackOverflow} target="_blank">
-          <IconButton
-            sx={{
-              backgroundColor: "primary.main",
-              transition: "all 0.3s",
-              "&:hover": {
-                backgroundColor: "#16f2b3",
-                transform: "scale(1.1)",
-              },
-              color: "white",
-            }}
-          >
-            <StackOverflowIcon fontSize="large" />
-          </IconButton>
+          <ContactButton icon={<StackOverflowIcon fontSize="large" />} />
         </Link>
       </Box>
     </Box>

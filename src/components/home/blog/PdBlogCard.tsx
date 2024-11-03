@@ -90,7 +90,7 @@ export default function PdBlogCard({ blog }: BlogCardProps) {
         <Grid container justifyContent="space-between" alignItems="center">
           <Typography
             sx={{
-              color: "#16f2b3",
+              color: "primary.light",
               fontSize: "0.875rem",
             }}
           >
@@ -99,7 +99,7 @@ export default function PdBlogCard({ blog }: BlogCardProps) {
           <Box display="flex" alignItems="center" gap={1}>
             <IconButton
               sx={{
-                color: "#16f2b3",
+                color: "primary.light",
                 "&:hover": {
                   color: "red",
                 },
@@ -113,7 +113,7 @@ export default function PdBlogCard({ blog }: BlogCardProps) {
             {blog.comments_count > 0 && (
               <IconButton
                 sx={{
-                  color: "#16f2b3",
+                  color: "primary.light",
                 }}
               >
                 <CommentIcon />
@@ -144,7 +144,7 @@ export default function PdBlogCard({ blog }: BlogCardProps) {
         <Typography
           sx={{
             mb: 2,
-            color: "#16f2b3",
+            color: "primary.light",
             fontSize: "0.875rem",
           }}
         >

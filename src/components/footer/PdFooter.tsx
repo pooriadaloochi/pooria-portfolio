@@ -31,7 +31,7 @@ function PdFooter() {
             href={personalData.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "#16f2b3" }}
+            sx={{ color: "primary.light" }}
           >
             {t("topBar.logo")}
           </Link>

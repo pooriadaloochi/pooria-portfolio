@@ -103,7 +103,7 @@ export default function PdEducation() {
                       <Typography
                         sx={{
                           fontSize: { xs: "0.75rem", sm: "1rem" },
-                          color: "#16f2b3",
+                          color: "primary.light",
                         }}
                       >
                         {education.duration}

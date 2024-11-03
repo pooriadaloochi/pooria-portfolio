@@ -9,9 +9,11 @@ import {
   Stack,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { Link as RouterLink } from "react-router-dom";
 import PdSwitchTheme from "../components/PdSwitchTheme";
 import { PdSwitchLanguage } from "../components/PdSwitchLanguage";
 import { getTopBarItems } from "../../../lib/models/top-bar/topBarItems";
+import { PATHS } from "../../../pages/paths";
 
 export function PdTopBarDesktop() {
   const { background, primary } = useTheme().palette;
@@ -30,7 +32,7 @@ export function PdTopBarDesktop() {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", py: 2 }}>
         <Box>
-          <Link href="/" underline="none">
+          <Link component={RouterLink} to={PATHS.HOME} underline="none">
             <Typography
               variant="h4"
               sx={{ color: primary.main, fontWeight: "bold" }}
@@ -44,7 +46,8 @@ export function PdTopBarDesktop() {
           {items.map((item) => (
             <Box key={item.label} component="li" sx={{ listStyle: "none" }}>
               <Link
-                href={item.href}
+                component={RouterLink}
+                to={item.href}
                 underline="none"
                 sx={{
                   display: "block",

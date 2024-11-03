@@ -6,7 +6,7 @@ import PdSectionHeader from "../../section-header/PsSectionHeader";
 import PdExperienceItem from "./PdExperienceItem";
 import { useTranslation } from "react-i18next";
 
-export default function PdExperiences() {
+export default function PdExperiencesSection() {
   const { t } = useTranslation();
 
   return (

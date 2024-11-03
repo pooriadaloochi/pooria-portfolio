@@ -103,17 +103,6 @@ const ContactWithoutCaptcha: React.FC = () => {
   };
   return (
     <Stack justifyContent="center">
-      <Typography
-        variant="h6"
-        component="p"
-        fontWeight="medium"
-        mb={5}
-        color="primary.main"
-        textTransform="uppercase"
-        textAlign={{ xs: "center", lg: "left" }}
-      >
-        {t("contactMe.title")}
-      </Typography>
       <Box
         maxWidth="sm"
         border={1}

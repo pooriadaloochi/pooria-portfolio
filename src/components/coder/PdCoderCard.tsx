@@ -17,6 +17,7 @@ export default function PdCoderCard({ title, data }: CoderCardProps) {
 
   return (
     <Box
+      key={title}
       sx={{
         direction: "ltr",
         order: { xs: 1, lg: 2 },

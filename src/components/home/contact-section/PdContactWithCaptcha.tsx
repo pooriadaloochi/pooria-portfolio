@@ -74,13 +74,6 @@ export default function PdContactWithCaptcha() {
 
   return (
     <Box>
-      <Typography
-        variant="h5"
-        component="p"
-        sx={{ mb: 3, color: "#16f2b3", textTransform: "uppercase" }}
-      >
-        Contact with me
-      </Typography>
       <Box
         maxWidth="md"
         sx={{

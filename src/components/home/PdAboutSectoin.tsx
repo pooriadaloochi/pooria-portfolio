@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { useTranslation } from "react-i18next";
+import PdLabel from "../common/PdLabel";
 
 const ProfileImage = styled("img")({
   width: 280,
@@ -69,33 +70,7 @@ export default function PdAboutSection() {
         </Box>
       </Box>
       {/* Vertical ABOUT ME label */}
-      <Box
-        sx={{
-          display: { xs: "none", lg: "flex" },
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Box
-          sx={{
-            backgroundColor: "primary.main",
-            color: "white",
-            width: 200,
-            height: 62,
-            transform: "rotate(90deg)",
-            p: 2,
-            px: 5,
-            fontSize: "1.25rem",
-            borderRadius: "8px",
-            textAlign: "center",
-          }}
-        >
-          {t("about.title")}
-        </Box>
-        <Box
-          sx={{ height: 144, width: "2px", backgroundColor: "primary.main" }}
-        />
-      </Box>
+      <PdLabel title={t("about.title")} />
     </Box>
   );
 }

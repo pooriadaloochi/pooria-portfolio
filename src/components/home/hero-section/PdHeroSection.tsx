@@ -3,7 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { personalData } from "../../../api/personalData";
-import PdCoderCard from "../../coder/PdCoder";
+import PdCoderCard from "../../coder/PdCoderCard";
 import Typewriter from "typewriter-effect";
 import HeroIcon from "../../icons/HeroIcon";
 import { coderData } from "../../../api/coderData";

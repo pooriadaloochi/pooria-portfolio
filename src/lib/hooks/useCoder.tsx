@@ -1,6 +1,7 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 import { blue } from "../theme/dark/dark-theme-colors";
-import { CoderDataProps } from "../../components/coder/PdCoder";
+import { CoderDataProps } from "../../components/coder/PdCoderCard";
+import { Fragment } from "react/jsx-runtime";
 
 interface useCoderOutput {
   getCoderValue: (data: CoderDataProps) => JSX.Element | string;
@@ -12,7 +13,7 @@ export const useCoder = (): useCoderOutput => {
     switch (true) {
       case Array.isArray(value):
         return (
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row" spacing={1} key={key}>
             <Typography>{key}:</Typography>
             <Box component="span" sx={{ color: "grey.500" }}>
               {"["}
@@ -26,7 +27,7 @@ export const useCoder = (): useCoderOutput => {
             >
               {Array.isArray(value) &&
                 value.map((val, index) => (
-                  <>
+                  <Fragment key={index}>
                     <Typography
                       sx={{
                         color: warning.main,
@@ -39,30 +40,15 @@ export const useCoder = (): useCoderOutput => {
                     ) : (
                       <Typography sx={{ color: "grey.500" }}>{"]"}</Typography>
                     )}
-                  </>
+                  </Fragment>
                 ))}
             </Stack>
           </Stack>
-          //       <Fragment key={valIndex}>
-          //         <Box component="span" sx={{ color: "#ffb300" }}>
-          //           {val}
-          //         </Box>
-          //         {valIndex < value.length - 1 && (
-          //           <Box component="span" sx={{ color: "grey.500" }}>
-          //             ,
-          //           </Box>
-          //         )}
-          //       </Fragment>
-          //     ))}
-          //     <Box component="span" sx={{ color: "grey.500" }}>
-          //       {"]"}
-          //     </Box>
-          //   </>
         );
 
       case typeof value === "boolean":
         return (
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row" spacing={1} key={key}>
             <Typography>{key}:</Typography>
             <Typography sx={{ color: blue.main }}>
               {` ${value.toString()},`}
@@ -72,7 +58,7 @@ export const useCoder = (): useCoderOutput => {
 
       default:
         return (
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row" spacing={1} key={key}>
             <Typography>{key}:</Typography>
             <Typography sx={{ color: warning.main }}>
               {` "${value.toString()}",`}

@@ -1,4 +1,4 @@
-import { CoderDataProps } from "../components/coder/PdCoder";
+import { CoderDataProps } from "../components/coder/PdCoderCard";
 
 export const coderData: CoderDataProps[] = [
   { key: "name", value: "Pooria Daloochi" },

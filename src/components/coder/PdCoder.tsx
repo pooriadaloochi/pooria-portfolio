@@ -1,14 +1,14 @@
 import { Box, Divider, Stack, useTheme } from "@mui/material";
 import { useCoder } from "../../lib/hooks/useCoder";
 
-export interface DataProps {
+export interface CoderDataProps {
   key: string;
   value: string | boolean | string[] | number | object;
 }
 
 interface CoderCardProps {
   title: string;
-  data: DataProps[];
+  data: CoderDataProps[];
 }
 
 export default function PdCoderCard({ title, data }: CoderCardProps) {

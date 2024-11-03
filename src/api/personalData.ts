@@ -17,7 +17,7 @@ export const experiences = [
     id: 1,
     title: "Senior Full-Stack Developer",
     company: "Tradevest GmbH",
-    image: "/assets/companies/tradevest.JPEG",
+    image: "/assets/companies/Tradevest.png",
     duration: "(May 2023 - Present)",
   },
   {
@@ -31,14 +31,14 @@ export const experiences = [
     id: 3,
     title: "Front-End Developer",
     company: "Partodadeh",
-    image: "/assets/companies/partodadeh.png",
+    image: "/assets/companies/Partodadeh.png",
     duration: "(Jun 2018 - Nov 2019)",
   },
   {
     id: 4,
     title: "Front-End Developer",
     company: "ClickHub",
-    image: "/assets/companies/Clickub.jpeg",
+    image: "/assets/companies/Clickub.png",
     duration: "(Jan 2017 - May 2018)",
   },
   {

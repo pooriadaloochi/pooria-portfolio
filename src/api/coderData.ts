@@ -1,6 +1,6 @@
-import { DataProps } from "../components/coder/PdCoder";
+import { CoderDataProps } from "../components/coder/PdCoder";
 
-export const coderData: DataProps[] = [
+export const coderData: CoderDataProps[] = [
   { key: "name", value: "Pooria Daloochi" },
   {
     key: "skills",

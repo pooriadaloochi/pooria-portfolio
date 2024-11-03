@@ -118,27 +118,6 @@ export default function PdHeroSection() {
               </Button>
             </Link>
           </Box>
-          {/* <Link href={personalData.resume} target="_blank" underline="none">
-              <Button
-                variant="contained"
-                endIcon={<DownloadIcon />}
-                sx={{
-                  backgroundImage: gradients.primary,
-                  px: { xs: 3, md: 8 },
-                  py: { xs: 1, md: 2 },
-                  color: "white",
-                  borderRadius: "50px",
-                  textTransform: "uppercase",
-                  transition: "all 0.3s ease-out",
-                  "&:hover": {
-                    backgroundImage: gradients.secondary,
-                    gap: 3,
-                  },
-                }}
-              >
-                Get Resume
-              </Button>
-            </Link> */}
         </Grid>
         {/* Right Section */}
 

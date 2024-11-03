@@ -17,7 +17,7 @@ export default function PdSkillSlider() {
         delay={2}
         play={true}
         direction="right"
-        style={{ overflowY: "visible" }}
+        style={{ minHeight: "210px" }}
       >
         {skillsData.map((skill, id) => (
           <Paper

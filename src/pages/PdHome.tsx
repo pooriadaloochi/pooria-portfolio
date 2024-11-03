@@ -4,7 +4,6 @@ import PdEducation from "../components/home/education/PdEducation";
 import PdAboutSection from "../components/home/PdAboutSectoin";
 import PdHeroSection from "../components/home/hero-section/PdHeroSection";
 import PdSkills from "../components/home/skills/PdSkills";
-import PdProjects from "../components/home/projects/projects";
 import { Container } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
@@ -23,7 +22,6 @@ export default function PdHome() {
         <PdAboutSection />
         <PdExperiences />
         <PdSkills />
-        {/* <PdProjects /> */}
         {/* <PdEducation /> */}
         {/* <PdBlogs blogs={[]} /> */}
         <PdContactSection />

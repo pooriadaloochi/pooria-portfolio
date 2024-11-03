@@ -45,7 +45,7 @@ export default function PdExperienceItem(experience: any) {
               "&:hover": { transform: "scale(1.25)" },
             }}
           >
-            <img src={experience.image} alt="company" width={100} />
+            <img src={experience.image} alt={experience.company} width={100} />
           </Box>
           <Box>
             <Typography

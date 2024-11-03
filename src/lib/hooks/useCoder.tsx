@@ -1,14 +1,14 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 import { blue } from "../theme/dark/dark-theme-colors";
-import { DataProps } from "../../components/coder/PdCoder";
+import { CoderDataProps } from "../../components/coder/PdCoder";
 
 interface useCoderOutput {
-  getCoderValue: (data: DataProps) => JSX.Element | string;
+  getCoderValue: (data: CoderDataProps) => JSX.Element | string;
 }
 
 export const useCoder = (): useCoderOutput => {
   const { warning } = useTheme().palette;
-  const getCoderValue = ({ key, value }: DataProps) => {
+  const getCoderValue = ({ key, value }: CoderDataProps) => {
     switch (true) {
       case Array.isArray(value):
         return (

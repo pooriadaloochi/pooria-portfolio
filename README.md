@@ -22,11 +22,14 @@ This website is designed to give an overview of my professional background, incl
 - **Frontend**:
   - [React.js](https://reactjs.org/): JavaScript library for building user interfaces.
   - [Next.js](https://nextjs.org/): React framework for server-side rendering and static site generation.
-  - **Styled Components**: For styling components with a CSS-in-JS approach.
-  - **Material UI** and **TailwindCSS**: To create a modern and responsive UI.
+  - **Material UI (MUI)**: To create a modern and responsive UI, including icons and date pickers.
+  - **Emotion**: Styling with `@emotion/react` and `@emotion/styled` for custom, CSS-in-JS styling.
 - **Backend**:
   - [Node.js](https://nodejs.org/): Server-side JavaScript runtime.
   - [Express.js](https://expressjs.com/): Backend framework used for creating APIs (if applicable).
+- **Internationalization**:
+  - [i18next](https://www.i18next.com/): For adding multilingual support to the website.
+  - **React-i18next**: Integration of i18next with React for efficient internationalization.
 - **Hosting**:
   - [Vercel](https://vercel.com/): Deployment of the portfolio for fast, reliable hosting.
 

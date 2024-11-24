@@ -1,46 +1,113 @@
-# Getting Started with Create React App
+# Pooria Daloochi - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the GitHub repository for my personal portfolio website. This portfolio showcases my skills, experience, and projects as a Full Stack Developer specializing in React.js, Next.js, and other modern web technologies. Visit the live version at [pooriadaloochi.com](http://pooriadaloochi.com).
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This website is designed to give an overview of my professional background, including:
 
-### `npm start`
+- **About Me**: A brief introduction about my background, skills, and interests.
+- **Projects**: Detailed information on various projects I have worked on, including descriptions, key technologies, and links to live demos and GitHub repositories.
+- **Skills**: A comprehensive list of technologies and tools I am proficient in.
+- **Contact**: Ways to get in touch with me.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Responsive Design**: The website is fully responsive, ensuring an optimal experience on all devices, from desktop to mobile.
+- **Interactive Elements**: Includes interactive features like animations and hover effects to improve user engagement.
+- **Modern UI**: Uses clean, visually appealing design principles to ensure a professional presentation.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**:
+  - [React.js](https://reactjs.org/): JavaScript library for building user interfaces.
+  - [Next.js](https://nextjs.org/): React framework for server-side rendering and static site generation.
+  - **Styled Components**: For styling components with a CSS-in-JS approach.
+  - **Material UI** and **TailwindCSS**: To create a modern and responsive UI.
+- **Backend**:
+  - [Node.js](https://nodejs.org/): Server-side JavaScript runtime.
+  - [Express.js](https://expressjs.com/): Backend framework used for creating APIs (if applicable).
+- **Hosting**:
+  - [Vercel](https://vercel.com/): Deployment of the portfolio for fast, reliable hosting.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to run the project locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Node.js** (v14 or above) and **npm** or **yarn** should be installed.
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pooriadaloochi/portfolio.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd portfolio
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run the development server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## Learn More
+The website should be available at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To create an optimized production build:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+To start the production server:
+
+```bash
+npm start
+# or
+yarn start
+```
+
+## Folder Structure
+
+- **/components**: Reusable UI components used throughout the website.
+- **/pages**: Next.js pages that define the routes of the portfolio.
+- **/public**: Static assets like images and icons.
+- **/styles**: CSS files and styled components for custom styling.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+
+## Contact
+
+Feel free to reach out if you have any questions or want to connect:
+
+- **Website**: [pooriadaloochi.com](http://pooriadaloochi.com)
+- **LinkedIn**: [linkedin.com/in/pooriadaloochi](https://linkedin.com/in/pooriadaloochi)
+- **Email**: pooriadaloochi@gmail.com
+
+## License
+
+This project is open source and available under the [MIT License](./LICENSE).
+
+---
+
+Thank you for checking out my portfolio! I hope you enjoy exploring it as much as I enjoyed creating it.

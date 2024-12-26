@@ -11,6 +11,7 @@ export const topBarFA = {
   [t.items.education]: "تحصیلات",
   [t.items.blogs]: "وبلاگ ها",
   [t.items.projects]: "پروژه ها",
+  [t.items.certificates]: "گواهینامه ها",
   [t.items.contact]: "تماس با من",
   // Footer
   [t.footer.poweredBy]: "تمامی حقوق محفوظ است برای",

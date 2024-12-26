@@ -15,4 +15,6 @@ export const commonDE = {
     "Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben.",
   [t.Page404.goBack]: "Zurück zur Homepage",
   [t.experiences.title]: "Erfahrungen",
+  [t.certifications.title]: "Zertifikate",
+  [t.preview]: "Vorschau",
 };

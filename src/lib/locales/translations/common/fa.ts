@@ -15,4 +15,6 @@ export const commonFA = {
     "صفحه‌ای که به دنبال آن هستید وجود ندارد یا منتقل شده است.",
   [t.Page404.goBack]: "بازگشت به صفحه اصلی",
   [t.experiences.title]: "تجربیات",
+  [t.certifications.title]: "گواهی‌ نامه‌ ها",
+  [t.preview]: "پیش‌ نمایش",
 };

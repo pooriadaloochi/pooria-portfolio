@@ -11,10 +11,13 @@ export default function PdSectionHeader({ title }: PdSectionHeaderProps) {
   return (
     <Box
       sx={{
+        width: "99%",
         position: "relative",
         py: 6,
+        my: 5,
         bgcolor: "background.paper",
         textAlign: "center",
+        borderRadius: 2,
       }}
     >
       <PdGradientDivider top="50%" />

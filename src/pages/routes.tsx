@@ -8,6 +8,7 @@ import PdAbout from "./about/PdAbout";
 import PdExperience from "./experience/PdExperience";
 import PdContact from "./contact/PdContact";
 import PdSkill from "./skills/PdSkill";
+import PdCertifications from "./certificates/PdCertificates";
 
 export const routes: RouteObject[] = [
   {
@@ -27,16 +28,20 @@ export const routes: RouteObject[] = [
         element: <PdAbout />,
       },
       {
+        path: PATHS.SKILLS,
+        element: <PdSkill />,
+      },
+      {
         path: PATHS.EXPERIENCE,
         element: <PdExperience />,
       },
       {
-        path: PATHS.CONTACT,
-        element: <PdContact />,
+        path: PATHS.CERTIFICATES,
+        element: <PdCertifications />,
       },
       {
-        path: PATHS.SKILLS,
-        element: <PdSkill />,
+        path: PATHS.CONTACT,
+        element: <PdContact />,
       },
     ],
   },

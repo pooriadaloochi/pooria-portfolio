@@ -11,6 +11,7 @@ export const topBarEN = {
   [t.items.education]: "Education",
   [t.items.blogs]: "Blogs",
   [t.items.projects]: "Projects",
+  [t.items.certificates]: "Certificates",
   [t.items.contact]: "Contact Me",
   // Footer
   [t.footer.poweredBy]: "Developer Portfolio by",

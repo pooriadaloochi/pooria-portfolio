@@ -8,6 +8,7 @@ export const topBar = {
     education: "topBar.items.education",
     blogs: "topBar.items.blogs",
     projects: "topBar.items.projects",
+    certificates: "topBar.items.certificates",
     contact: "topBar.items.contact",
   },
   footer: {

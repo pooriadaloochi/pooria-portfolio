@@ -18,4 +18,8 @@ export const common = {
   experiences: {
     title: "common.experiences.title",
   },
+  certifications: {
+    title: "common.certifications.title",
+  },
+  preview: "common.preview",
 } as const;

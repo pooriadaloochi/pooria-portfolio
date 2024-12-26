@@ -49,3 +49,25 @@ export const experiences = [
     duration: "(Feb 2018 - Jan 2020)",
   },
 ];
+export const certifications = [
+  {
+    title: "React & Redux",
+    image: "/assets/certifications/React Certificate.jpeg",
+  },
+  {
+    title: "Git & Github",
+    image: "/assets/certifications/Git & Github Certificate.jpg",
+  },
+  {
+    title: "JavaScript",
+    image: "/assets/certifications/Javascript Certificate.jpg",
+  },
+  {
+    title: "Python",
+    image: "/assets/certifications/Python Certificate.jpg",
+  },
+  {
+    title: "SQL",
+    image: "/assets/certifications/SQL Certificate.jpg",
+  }
+];

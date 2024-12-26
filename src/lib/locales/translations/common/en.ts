@@ -15,4 +15,6 @@ export const commonEN = {
     "The page you're looking for doesn't exist or was moved.",
   [t.Page404.goBack]: "Go Back to Homepage",
   [t.experiences.title]: "Experiences",
+  [t.certifications.title]: "Certifications",
+  [t.preview]: "Preview",
 };

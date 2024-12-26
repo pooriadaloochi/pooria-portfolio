@@ -11,6 +11,7 @@ export const topBarDE = {
   [t.items.education]: "Bildung",
   [t.items.blogs]: "Blogs",
   [t.items.projects]: "Projekte",
+  [t.items.certificates]: "Zertifikate",
   [t.items.contact]: "Kontaktiere mich",
   // Footer
   [t.footer.poweredBy]: "Entwicklerportfolio von",

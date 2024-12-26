@@ -33,6 +33,10 @@ export function getTopBarItems(t: TFunction): TopBarItems[] {
     //   label: t("topBar.items.projects"),
     // },
     {
+      href: PATHS.CERTIFICATES,
+      label: t("topBar.items.certificates"),
+    },
+    {
       href: PATHS.CONTACT,
       label: t("topBar.items.contact"),
     },

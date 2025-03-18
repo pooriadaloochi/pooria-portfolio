@@ -1,9 +1,10 @@
 import { Container } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import PdExperiencesSection from "../../components/home/experience-section/PdExperiences";
+// Components
+import { PdSkillsSection } from "@components/home/skills/PdSkillsSection";
 
-export default function PdExperience() {
+export function PdSkillPage() {
   const { t } = useTranslation();
 
   return (
@@ -12,7 +13,7 @@ export default function PdExperience() {
         <title>{t("common.homePageTitle")}</title>
       </Helmet>
       <Container maxWidth="xl">
-        <PdExperiencesSection />
+        <PdSkillsSection />
       </Container>
     </>
   );

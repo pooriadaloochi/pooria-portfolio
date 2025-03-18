@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import StackOverflowIcon from "@mui/icons-material/Help";
 import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
 import {
   Call,
   GitHub,
@@ -9,7 +10,6 @@ import {
   LocationOn,
   AlternateEmail,
 } from "@mui/icons-material";
-import { ReactNode } from "react";
 
 interface PdContactInfoProps {
   email: string;
@@ -19,7 +19,7 @@ interface PdContactInfoProps {
   linkedIn: string;
   stackOverflow: string;
 }
-const ContactButton = ({ icon }: { icon: ReactNode }) => {
+function ContactButton({ icon }: { icon: ReactNode }) {
   return (
     <IconButton
       sx={{
@@ -35,7 +35,7 @@ const ContactButton = ({ icon }: { icon: ReactNode }) => {
       {icon}
     </IconButton>
   );
-};
+}
 
 export function PdContactInfo({
   address,

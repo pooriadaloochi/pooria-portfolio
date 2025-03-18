@@ -7,7 +7,7 @@ interface HeroIconProps extends SVGProps<SVGSVGElement> {
   secondaryColor?: string;
 }
 
-export default function HeroIcon({
+export function PdHeroIcon({
   primaryColor,
   secondaryColor,
   ...other

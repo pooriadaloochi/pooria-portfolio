@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
-import PdSkillSlider from "./PdSkillSlider";
-import PdSectionHeader from "../../section-header/PsSectionHeader";
 import { useTranslation } from "react-i18next";
+import PdSkillSlider from "./PdSkillSlider";
+import { PdSectionHeader } from "@components/common/PsSectionHeader/PsSectionHeader";
 
-export default function PdSkillsSection() {
+export function PdSkillsSection() {
   const { t } = useTranslation();
 
   return (

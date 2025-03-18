@@ -10,10 +10,10 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
-import PdSwitchTheme from "../components/PdSwitchTheme";
+import { getTopBarItems } from "@models/top-bar/getTopBarItems";
+import { PATHS } from "@pages/paths";
+import { PdSwitchTheme } from "../components/PdSwitchTheme";
 import { PdSwitchLanguage } from "../components/PdSwitchLanguage";
-import { getTopBarItems } from "../../../lib/models/top-bar/topBarItems";
-import { PATHS } from "../../../pages/paths";
 
 export function PdTopBarDesktop() {
   const { background, primary } = useTheme().palette;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -6,9 +7,7 @@ import {
   Grid,
   IconButton,
 } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import CommentIcon from "@mui/icons-material/Comment";
-import { Link } from "react-router-dom";
+import { Favorite, Comment } from "@mui/icons-material";
 
 export function timeConverter(isoTime: string) {
   const currentTime = new Date().getTime();
@@ -51,7 +50,7 @@ interface BlogCardProps {
   blog: BlogDataType;
 }
 
-export default function PdBlogCard({ blog }: BlogCardProps) {
+export function PdBlogCard({ blog }: BlogCardProps) {
   return (
     <Card
       sx={{
@@ -105,7 +104,7 @@ export default function PdBlogCard({ blog }: BlogCardProps) {
                 },
               }}
             >
-              <FavoriteIcon />
+              <Favorite />
               <Typography variant="body2" component="span">
                 {blog.public_reactions_count}
               </Typography>
@@ -116,7 +115,7 @@ export default function PdBlogCard({ blog }: BlogCardProps) {
                   color: "primary.light",
                 }}
               >
-                <CommentIcon />
+                <Comment />
                 <Typography variant="body2" component="span">
                   {blog.comments_count}
                 </Typography>

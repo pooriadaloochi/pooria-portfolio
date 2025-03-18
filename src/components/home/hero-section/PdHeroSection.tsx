@@ -2,14 +2,15 @@ import { Box, Button, Link, useTheme, Grid, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
-import { personalData } from "../../../api/personalData";
-import PdCoderCard from "../../coder/PdCoderCard";
-import Typewriter from "typewriter-effect";
-import HeroIcon from "../../icons/HeroIcon";
-import { coderData } from "../../../api/coderData";
-import { useTranslation } from "react-i18next";
 
-export default function PdHeroSection() {
+import Typewriter from "typewriter-effect";
+import { useTranslation } from "react-i18next";
+import { PdCoderCard } from "@components/coder/PdCoderCard";
+import { personalData } from "@api/personalData";
+import { coderData } from "@api/coderData";
+import { PdHeroIcon } from "@components/icons/PdHeroIcon";
+
+export function PdHeroSection() {
   const { primary, secondary } = useTheme().palette;
 
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ export default function PdHeroSection() {
           width: "100%",
         }}
       >
-        <HeroIcon
+        <PdHeroIcon
           primaryColor={primary.light}
           secondaryColor={secondary.light}
         />

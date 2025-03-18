@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import { toast } from "react-toastify";
 import * as emailjs from "emailjs-com";
@@ -31,7 +31,7 @@ export function isValidEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
-const ContactWithoutCaptcha: React.FC = () => {
+export function PdContactWithoutCaptcha() {
   const { gradients } = useTheme().palette;
   const { t } = useTranslation();
   const [error, setError] = useState<ErrorState>({
@@ -209,6 +209,4 @@ const ContactWithoutCaptcha: React.FC = () => {
       </Box>
     </Stack>
   );
-};
-
-export default ContactWithoutCaptcha;
+}

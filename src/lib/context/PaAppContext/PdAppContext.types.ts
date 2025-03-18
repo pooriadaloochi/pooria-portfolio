@@ -1,5 +1,5 @@
+import { LocalesType } from "@locales/i18.types";
 import type { PaletteMode } from "@mui/material";
-import { LocalesType } from "../locales/i18.types";
 
 export enum PaAppContextActionName {
   SWITCH_THEME,

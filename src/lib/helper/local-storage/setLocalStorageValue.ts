@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_KEYS } from "../../config/local-storage-keys";
+import { LOCAL_STORAGE_KEYS } from "@config/localstorage-keys";
 import { getLocalStorageAppSettings } from "./getLocalStorageAppSettings";
 
 export function setLocalStorageValue(value: Record<string, unknown>) {

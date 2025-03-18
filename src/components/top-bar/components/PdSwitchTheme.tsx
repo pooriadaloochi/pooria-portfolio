@@ -1,11 +1,11 @@
-import { DarkMode, WbSunny } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
 import {
   usePaAppContextActions,
   usePaAppContextState,
-} from "../../../lib/PaAppContext";
+} from "@context/PaAppContext";
+import { DarkMode, WbSunny } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 
-export default function PdSwitchTheme() {
+export function PdSwitchTheme() {
   const { paletteMode } = usePaAppContextState();
   const { switchTheme } = usePaAppContextActions();
 

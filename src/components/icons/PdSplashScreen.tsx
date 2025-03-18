@@ -10,7 +10,7 @@ const spin = keyframes`
   }
 `;
 
-export const SplashScreen: FC = () => (
+export const PdSplashScreen: FC = () => (
   <Box
     sx={{
       alignItems: "center",

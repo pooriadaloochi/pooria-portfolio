@@ -1,10 +1,12 @@
 import { Box, useTheme, Grid, Stack, Typography } from "@mui/material";
-import { certifications } from "../../../api/personalData";
-import PdImagePreview from "../../common/PdImagePreview";
-import PdSectionHeader from "../../section-header/PsSectionHeader";
 import { useTranslation } from "react-i18next";
+// Components
+import { PdSectionHeader } from "@components/common/PsSectionHeader/PsSectionHeader";
+import { PdImagePreview } from "@components/common/PdImagePreview";
+// API
+import { certifications } from "@api/personalData";
 
-export default function PdCertificationsSections({
+export function PdCertificationsSections({
   certificatesNumber,
 }: {
   certificatesNumber?: number;

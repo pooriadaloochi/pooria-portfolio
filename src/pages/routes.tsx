@@ -1,14 +1,17 @@
 import type { RouteObject } from "react-router-dom";
 import { Navigate, Outlet } from "react-router-dom";
-import { Layout } from "../components/layout/layout";
-import PdHome from "./PdHome";
-import Page404 from "./404";
-import { PATHS } from "./paths";
-import PdAbout from "./about/PdAbout";
-import PdExperience from "./experience/PdExperience";
-import PdContact from "./contact/PdContact";
-import PdSkill from "./skills/PdSkill";
-import PdCertifications from "./certificates/PdCertificates";
+// Layout
+import { Layout } from "@components/layout/layout";
+// Pages
+import { PdHomePage } from "@pages/PdHomePage/PdHomePage";
+import { PdAboutPage } from "@pages/PdAboutPage/PdAboutPage";
+import { PdSkillPage } from "@pages/PdSkillPage/PdSkillPage";
+import { PdExperiencePage } from "@pages/PdExperiencePage/PdExperiencePage";
+import { PdCertificatesPage } from "@pages/PdCertificatesPage/PdCertificatesPage";
+import { PdContactPage } from "@pages/PdContactPage/PdContactPage";
+import { Page404 } from "./404";
+// Paths
+import { PATHS } from "@pages/paths";
 
 export const routes: RouteObject[] = [
   {
@@ -21,27 +24,27 @@ export const routes: RouteObject[] = [
     children: [
       {
         path: PATHS.HOME,
-        element: <PdHome />,
+        element: <PdHomePage />,
       },
       {
         path: PATHS.ABOUT,
-        element: <PdAbout />,
+        element: <PdAboutPage />,
       },
       {
         path: PATHS.SKILLS,
-        element: <PdSkill />,
+        element: <PdSkillPage />,
       },
       {
         path: PATHS.EXPERIENCE,
-        element: <PdExperience />,
+        element: <PdExperiencePage />,
       },
       {
         path: PATHS.CERTIFICATES,
-        element: <PdCertifications />,
+        element: <PdCertificatesPage />,
       },
       {
         path: PATHS.CONTACT,
-        element: <PdContact />,
+        element: <PdContactPage />,
       },
     ],
   },

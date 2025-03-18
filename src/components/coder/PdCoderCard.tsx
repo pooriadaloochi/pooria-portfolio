@@ -1,5 +1,5 @@
 import { Box, Divider, Stack, useTheme } from "@mui/material";
-import { useCoder } from "../../lib/hooks/useCoder";
+import { useCoder } from "@hooks/useCoder";
 
 export interface CoderDataProps {
   key: string;
@@ -11,7 +11,7 @@ interface CoderCardProps {
   data: CoderDataProps[];
 }
 
-export default function PdCoderCard({ title, data }: CoderCardProps) {
+export function PdCoderCard({ title, data }: CoderCardProps) {
   const { getCoderValue } = useCoder();
   const { background } = useTheme().palette;
 

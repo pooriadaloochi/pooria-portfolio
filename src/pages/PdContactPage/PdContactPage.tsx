@@ -1,9 +1,10 @@
 import { Container } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import PdContactSection from "../../components/home/contact-section/PdContactSection";
+// Components
+import { PdContactSection } from "@components/home/contact-section/PdContactSection";
 
-export default function PdContact() {
+export function PdContactPage() {
   const { t } = useTranslation();
 
   return (

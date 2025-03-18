@@ -1,8 +1,7 @@
-"use client";
-import { Box, Button, Typography, Grid, Divider } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import PdBlogCard from "./PdBlogCard";
 import { Link } from "react-router-dom";
+import { Box, Button, Typography, Grid, Divider } from "@mui/material";
+import { ArrowForward } from "@mui/icons-material";
+import { PdBlogCard } from "./PdBlogCard";
 import { BlogDataType } from "./PdBlogCard";
 
 interface BlogProps {
@@ -87,7 +86,7 @@ export default function PdBlogs({ blogs }: BlogProps) {
           <Button
             variant="contained"
             color="secondary"
-            endIcon={<ArrowForwardIcon />}
+            endIcon={<ArrowForward />}
             sx={{
               backgroundImage: "linear-gradient(to right, #f06292, #ab47bc)",
               px: 4,

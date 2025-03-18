@@ -1,11 +1,11 @@
 import { alpha, Box, Typography, useTheme } from "@mui/material";
-import PdGradientDivider from "../common/PdGradientDivider";
+import { PdGradientDivider } from "@components/common/PdGradientDivider";
 
 interface PdSectionHeaderProps {
   title: string;
 }
 
-export default function PdSectionHeader({ title }: PdSectionHeaderProps) {
+export function PdSectionHeader({ title }: PdSectionHeaderProps) {
   const { primary } = useTheme().palette;
 
   return (

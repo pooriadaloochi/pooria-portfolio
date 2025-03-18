@@ -4,7 +4,7 @@ interface PdGradientDividerProps {
   top?: string;
 }
 
-export default function PdGradientDivider({ top }: PdGradientDividerProps) {
+export function PdGradientDivider({ top }: PdGradientDividerProps) {
   const { primary } = useTheme().palette;
   return (
     <Box

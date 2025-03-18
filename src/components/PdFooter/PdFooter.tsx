@@ -1,8 +1,8 @@
 import { Box, Typography, Link } from "@mui/material";
+import { personalData } from "@api/personalData";
 import { useTranslation } from "react-i18next";
-import { personalData } from "../../api/personalData";
 
-function PdFooter() {
+export function PdFooter() {
   const { t } = useTranslation();
   return (
     <Box
@@ -40,5 +40,3 @@ function PdFooter() {
     </Box>
   );
 }
-
-export default PdFooter;

@@ -1,8 +1,8 @@
 import { TFunction } from "i18next";
-import { TopBarItems } from "./topBarItems.types";
-import { PATHS } from "../../../pages/paths";
+import { PATHS } from "@pages/paths";
+import { TopBarItemsType } from "./topBarItems.types";
 
-export function getTopBarItems(t: TFunction): TopBarItems[] {
+export function getTopBarItems(t: TFunction): TopBarItemsType[] {
   return [
     {
       href: PATHS.HOME,
@@ -20,18 +20,6 @@ export function getTopBarItems(t: TFunction): TopBarItems[] {
       href: PATHS.SKILLS,
       label: t("topBar.items.skills"),
     },
-    // {
-    //   href: "/education",
-    //   label: t("topBar.items.education"),
-    // },
-    // {
-    //   href: "/blogs",
-    //   label: t("topBar.items.blogs"),
-    // },
-    // {
-    //   href: "/projects",
-    //   label: t("topBar.items.projects"),
-    // },
     {
       href: PATHS.CERTIFICATES,
       label: t("topBar.items.certificates"),

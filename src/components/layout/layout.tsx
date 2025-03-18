@@ -1,9 +1,11 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import { Theme, useMediaQuery, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import PdFooter from "../footer/PdFooter";
-import { PdTopBarDesktop } from "../top-bar/PdTopBarDesktop/PdTopBarDesktop";
-import { PdTopBarMobile } from "../top-bar/PdTopBarMobile/PdTopBarMobile";
+// Components
+import { PdTopBarDesktop } from "@components/top-bar/PdTopBarDesktop/PdTopBarDesktop";
+import { PdTopBarMobile } from "@components/top-bar/PdTopBarMobile/PdTopBarMobile";
+import { PaScrollToTopBottom } from "@components/helper/PaScrollToTopBottom";
+import { PdFooter } from "@components/PdFooter/PdFooter";
 
 const HorizontalLayoutRoot = styled("div")({
   display: "flex",
@@ -23,7 +25,7 @@ interface HorizontalLayoutProps {
   children?: ReactNode;
 }
 
-export const Layout: FC<HorizontalLayoutProps> = (props) => {
+export function Layout(props: HorizontalLayoutProps) {
   const { children } = props;
 
   const theme = useTheme<Theme>();
@@ -36,7 +38,8 @@ export const Layout: FC<HorizontalLayoutProps> = (props) => {
       <HorizontalLayoutRoot>
         <HorizontalLayoutContainer>{children}</HorizontalLayoutContainer>
       </HorizontalLayoutRoot>
+      <PaScrollToTopBottom />
       <PdFooter />
     </>
   );
-};
+}

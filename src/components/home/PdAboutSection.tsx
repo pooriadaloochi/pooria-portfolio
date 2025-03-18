@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { useTranslation } from "react-i18next";
-import PdLabel from "../common/PdLabel";
+import { PdLabel } from "@components/common/PdLabel";
 
 const ProfileImage = styled("img")({
   width: 280,
@@ -15,7 +15,7 @@ const ProfileImage = styled("img")({
   },
 });
 
-export default function PdAboutSection() {
+export function PdAboutSection() {
   const { t } = useTranslation();
   return (
     <Box

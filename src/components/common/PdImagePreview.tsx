@@ -7,16 +7,15 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import FullscreenIcon from "@mui/icons-material/Fullscreen";
-import { Close } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
+import { Close, Fullscreen } from "@mui/icons-material";
 
 interface PdImagePreviewProps {
   imageUrl: string;
   alt: string;
 }
 
-const PdImagePreview = ({ imageUrl, alt }: PdImagePreviewProps) => {
+export function PdImagePreview({ imageUrl, alt }: PdImagePreviewProps) {
   const [open, setOpen] = useState(false);
 
   const { t } = useTranslation();
@@ -63,7 +62,7 @@ const PdImagePreview = ({ imageUrl, alt }: PdImagePreviewProps) => {
           }}
         >
           <Stack>
-            <FullscreenIcon sx={{ fontSize: 48 }} />
+            <Fullscreen sx={{ fontSize: 48 }} />
             <Typography>{t("common.preview")}</Typography>
           </Stack>
         </Box>
@@ -109,6 +108,4 @@ const PdImagePreview = ({ imageUrl, alt }: PdImagePreviewProps) => {
       </Dialog>
     </Stack>
   );
-};
-
-export default PdImagePreview;
+}

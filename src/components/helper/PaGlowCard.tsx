@@ -1,6 +1,6 @@
+import { ReactNode } from "react";
 import { Box } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
-import { ReactNode } from "react";
 
 const StyledGlowCard = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -34,8 +34,10 @@ const StyledGlowCard = styled(Box)(({ theme }) => ({
     right: 0,
     bottom: 0,
     pointerEvents: "none",
-    background:
-      `radial-gradient(circle, ${alpha(theme.palette.primary.main, .7)}, transparent 70%)`,
+    background: `radial-gradient(circle, ${alpha(
+      theme.palette.primary.main,
+      0.7
+    )}, transparent 70%)`,
     borderRadius: "inherit",
     opacity: 0,
     transition: "opacity 0.3s ease",
@@ -47,13 +49,11 @@ interface GlowCardProps {
   children: ReactNode;
 }
 
-const GlowCard = ({ children }: GlowCardProps) => {
+export function PaGlowCard({ children }: GlowCardProps) {
   return (
     <StyledGlowCard>
       <div className="glows" />
       {children}
     </StyledGlowCard>
   );
-};
-
-export default GlowCard;
+}

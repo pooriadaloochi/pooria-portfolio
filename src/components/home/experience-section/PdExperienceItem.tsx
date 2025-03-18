@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
-import GlowCard from "../../helper/glow-card";
+import { PaGlowCard } from "../../helper/PaGlowCard";
 
 export default function PdExperienceItem(experience: any) {
   return (
-    <GlowCard key={experience.id}>
+    <PaGlowCard key={experience.id}>
       <Box
         sx={{
           width: "100%",
@@ -69,6 +69,6 @@ export default function PdExperienceItem(experience: any) {
           </Box>
         </Box>
       </Box>
-    </GlowCard>
+    </PaGlowCard>
   );
 }

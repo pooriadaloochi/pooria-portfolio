@@ -1,4 +1,4 @@
-export type TopBarItems = {
+export type TopBarItemsType = {
   href: string;
   label: string;
 };

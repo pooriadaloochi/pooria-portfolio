@@ -1,12 +1,12 @@
 import { createContext, useEffect, useMemo, useReducer } from "react";
+import { useTranslation } from "react-i18next";
 import { PaAppContextReducer } from "./PsAppContext.reducer";
 import {
   PaAppContextActionName,
-  type PaAppContextActions,
-  type PaAppContextState,
+  PaAppContextActions,
+  PaAppContextState,
 } from "./PdAppContext.types";
-import { LocalesEnum } from "../locales/i18.types";
-import { useTranslation } from "react-i18next";
+import { LocalesEnum } from "../../locales/i18.types";
 
 export const PaAppContextStateContext = createContext<PaAppContextState>(
   {} as PaAppContextState

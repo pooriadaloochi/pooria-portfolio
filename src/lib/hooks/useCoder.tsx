@@ -1,7 +1,7 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
-import { blue } from "../theme/dark/dark-theme-colors";
-import { CoderDataProps } from "../../components/coder/PdCoderCard";
 import { Fragment } from "react/jsx-runtime";
+import { blue } from "@theme/dark/dark-theme-colors";
+import { CoderDataProps } from "@components/coder/PdCoderCard";
 
 interface useCoderOutput {
   getCoderValue: (data: CoderDataProps) => JSX.Element | string;

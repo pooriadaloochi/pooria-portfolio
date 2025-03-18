@@ -1,9 +1,7 @@
-import AnimationLottie from "../../helper/animation-lottie";
-// import lottieFile from "/lottie/study.json";
 import { Box, Grid, Typography, Divider } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
-import { educations } from "../../../api/educations";
-import GlowCard from "../../helper/glow-card";
+import { educations } from "@api/educations";
+import { PaGlowCard } from "@components/helper/PaGlowCard";
 
 interface EducationData {
   id: number;
@@ -12,7 +10,7 @@ interface EducationData {
   institution: string;
 }
 
-export default function PdEducation() {
+export function PdEducation() {
   return (
     <Box
       id="education"
@@ -82,15 +80,12 @@ export default function PdEducation() {
               alignItems: "start",
             }}
           >
-            <Box sx={{ width: "75%", height: "75%" }}>
-              {/* <AnimationLottie animationPath={lottieFile} /> */}
-            </Box>
+            <Box sx={{ width: "75%", height: "75%" }}></Box>
           </Grid>
-
           <Grid item xs={12} lg={6}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
               {educations.map((education: EducationData) => (
-                <GlowCard key={education.id}>
+                <PaGlowCard key={education.id}>
                   <Box sx={{ p: 3, position: "relative", color: "#fff" }}>
                     <img
                       src="/blur-23.svg"
@@ -148,7 +143,7 @@ export default function PdEducation() {
                       </Box>
                     </Box>
                   </Box>
-                </GlowCard>
+                </PaGlowCard>
               ))}
             </Box>
           </Grid>

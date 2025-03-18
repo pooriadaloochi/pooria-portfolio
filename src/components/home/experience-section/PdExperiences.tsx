@@ -1,12 +1,15 @@
 import { Box } from "@mui/material";
-import experienceAnimation from "../../../assets/json/lottie/code.json"; // Adjust path accordingly
-import AnimationLottie from "../../helper/animation-lottie";
-import { experiences } from "../../../api/personalData";
-import PdSectionHeader from "../../section-header/PsSectionHeader";
-import PdExperienceItem from "./PdExperienceItem";
 import { useTranslation } from "react-i18next";
+import experienceAnimation from "@assets/json/lottie/code.json";
+import PdExperienceItem from "./PdExperienceItem";
+import { PdSectionHeader } from "@components/common/PsSectionHeader/PsSectionHeader";
+import {
+  PaAnimationLottie,
+  PaAnimationLottieProps,
+} from "@components/helper/PaAnimationLottie";
+import { experiences } from "@api/personalData";
 
-export default function PdExperiencesSection() {
+export function PdExperiencesSection() {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +23,6 @@ export default function PdExperiencesSection() {
             gap: { xs: 8, lg: 16 },
           }}
         >
-          {/* Animation Section */}
           <Box
             sx={{
               display: "flex",
@@ -29,11 +31,13 @@ export default function PdExperiencesSection() {
             }}
           >
             <Box sx={{ width: "100%", height: "100%" }}>
-              <AnimationLottie animationPath={experienceAnimation} />
+              <PaAnimationLottie
+                animationPath={
+                  experienceAnimation as unknown as PaAnimationLottieProps["animationPath"]
+                }
+              />
             </Box>
           </Box>
-
-          {/* Experience Cards Section */}
           <Box>
             <Box
               sx={{

@@ -1,9 +1,9 @@
+import { skillsImage } from "@api/skill/skill-image";
+import { skillsData } from "@api/skills";
+import { PdGradientDivider } from "@components/common/PdGradientDivider";
 import { Box, Paper, Typography } from "@mui/material";
+import { grey } from "@theme/dark/dark-theme-colors";
 import Marquee from "react-fast-marquee";
-import { skillsData } from "../../../api/skills";
-import PdGradientDivider from "../../common/PdGradientDivider";
-import { skillsImage } from "../../../api/skill/skill-image";
-import { grey } from "../../../lib/theme/dark/dark-theme-colors";
 
 export default function PdSkillSlider() {
   return (

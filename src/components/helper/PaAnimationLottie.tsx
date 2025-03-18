@@ -1,6 +1,10 @@
 import Lottie from "lottie-react";
 
-const AnimationLottie = ({ animationPath, width }: any) => {
+export type PaAnimationLottieProps = {
+  animationPath: string;
+}
+
+export function PaAnimationLottie({ animationPath }: PaAnimationLottieProps) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -13,4 +17,3 @@ const AnimationLottie = ({ animationPath, width }: any) => {
   return <Lottie {...defaultOptions} />;
 };
 
-export default AnimationLottie;

@@ -2,7 +2,7 @@ import { Box, Typography, Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-function Page404() {
+export function Page404() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -20,7 +20,7 @@ function Page404() {
       <Box sx={{ mb: 4 }}>
         <Typography
           variant="h1"
-          sx={{ fontSize: "8rem", fontWeight: "bold", color: "#3f51b5" }}
+          sx={{ fontSize: "8rem", fontWeight: "bold", color: "primary.main" }}
         >
           {t("common.Page404.title")}
         </Typography>
@@ -44,5 +44,3 @@ function Page404() {
     </Container>
   );
 }
-
-export default Page404;

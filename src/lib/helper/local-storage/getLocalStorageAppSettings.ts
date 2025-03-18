@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_KEYS } from "../../config/local-storage-keys";
+import { LOCAL_STORAGE_KEYS } from "@config/localstorage-keys";
 
 export function getLocalStorageAppSettings() {
   const value = localStorage.getItem(LOCAL_STORAGE_KEYS.appSetting);

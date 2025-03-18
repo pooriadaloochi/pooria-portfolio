@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AppBar,
   Box,
@@ -13,29 +13,20 @@ import {
   ListItem,
   ListItemText,
   Stack,
-  Theme,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import PdSwitchTheme from "../components/PdSwitchTheme";
-import { PdSwitchLanguage } from "../components/PdSwitchLanguage";
-import { getTopBarItems } from "../../../lib/models/top-bar/topBarItems";
 import MenuIcon from "@mui/icons-material/Menu";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { getTopBarItems } from "@models/top-bar/getTopBarItems";
+import { PdSwitchLanguage } from "../components/PdSwitchLanguage";
+import { PdSwitchTheme } from "../components/PdSwitchTheme";
 
 export function PdTopBarMobile() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const { background, primary } = useTheme().palette;
   const { t } = useTranslation();
   const items = getTopBarItems(t);
 
-  // State to manage mobile drawer open/close
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  // Media query for mobile view
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("md")
-  );
-
-  // Function to toggle drawer
   const toggleDrawer = (open: any) => (event: any) => {
     if (
       event.type === "keydown" &&

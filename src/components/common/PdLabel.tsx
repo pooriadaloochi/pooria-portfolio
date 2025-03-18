@@ -4,7 +4,7 @@ interface PdLabelProps {
   title: string;
 }
 
-export default function PdLabel({ title }: PdLabelProps) {
+export function PdLabel({ title }: PdLabelProps) {
   return (
     <Box
       sx={{

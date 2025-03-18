@@ -1,8 +1,8 @@
 import { useRoutes } from "react-router-dom";
 import { routes } from "./pages/routes";
-import { SplashScreen } from "./components/icons/splash-screen";
+import { PdSplashScreen } from "@components/icons/PdSplashScreen";
 import { Helmet } from "react-helmet-async";
-import { usePaAppContextState } from "./lib/PaAppContext";
+import { usePaAppContextState } from "./lib/context/PaAppContext";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material";
@@ -42,7 +42,7 @@ function App() {
       </Helmet>
       <CssBaseline />
       <ToastContainer position="bottom-left" theme="colored" />
-      {false ? <SplashScreen /> : <>{element}</>}
+      {false ? <PdSplashScreen /> : <>{element}</>}
     </ThemeProvider>
   );
 }

@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import { isValidEmail } from "./PdContactWithoutCaptcha";
 
-export default function PdContactWithCaptcha() {
+export function PdContactWithCaptcha() {
   const [input, setInput] = useState<{
     name: string;
     email: string;
@@ -47,9 +47,11 @@ export default function PdContactWithCaptcha() {
       setError((prev) => ({ ...prev, required: false }));
     }
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! };
+    const serviceID = import.meta.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = import.meta.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const options = {
+      publicKey: import.meta.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+    };
 
     // try {
     //   const res = await emailjs.send(serviceID, templateID, input, options);
@@ -135,7 +137,7 @@ export default function PdContactWithCaptcha() {
             sx={{ mb: 3 }}
           />
           <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+            sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY!}
             onChange={(code) => setCaptcha(code)}
           />
           {error.required && (

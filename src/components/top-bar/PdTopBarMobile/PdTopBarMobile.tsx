@@ -19,12 +19,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { getTopBarItems } from "@models/top-bar/getTopBarItems";
 import { PdSwitchLanguage } from "../components/PdSwitchLanguage";
 import { PdSwitchTheme } from "../components/PdSwitchTheme";
+import { useLocation } from "react-router-dom";
 
 export function PdTopBarMobile() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const { background, primary } = useTheme().palette;
   const { t } = useTranslation();
+  const { pathname } = useLocation();
+
   const items = getTopBarItems(t);
 
   const toggleDrawer = (open: any) => (event: any) => {
@@ -41,11 +44,25 @@ export function PdTopBarMobile() {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         {items.map((item) => (
-          <ListItem button key={item.label} component="a" href={item.href}>
+          <ListItem
+            key={item.label}
+            component="a"
+            href={item.href}
+            sx={{
+              "&:hover": { backgroundColor: alpha(primary.main, 0.2) },
+              backgroundColor:
+                pathname === item.href
+                  ? alpha(primary.main, 0.2)
+                  : "transparent",
+              color: pathname === item.href ? primary.light : primary.main,
+            }}
+          >
             <ListItemText primary={item.label} />
           </ListItem>
         ))}
-        <PdSwitchLanguage />
+        <Box sx={{ mt: 2 }}>
+          <PdSwitchLanguage />
+        </Box>
       </List>
     </Box>
   );

@@ -1,7 +1,7 @@
 import type { RouteObject } from "react-router-dom";
 import { Navigate, Outlet } from "react-router-dom";
 // Layout
-import { Layout } from "@components/layout/layout";
+import { PdLayout } from "@components/layout/PdLayout";
 // Pages
 import { PdHomePage } from "@pages/PdHomePage/PdHomePage";
 import { PdAboutPage } from "@pages/PdAboutPage/PdAboutPage";
@@ -16,9 +16,9 @@ import { PATHS } from "@pages/paths";
 export const routes: RouteObject[] = [
   {
     element: (
-      <Layout>
+      <PdLayout>
         <Outlet />
-      </Layout>
+      </PdLayout>
     ),
     // Pages
     children: [
@@ -51,9 +51,9 @@ export const routes: RouteObject[] = [
   {
     path: PATHS.NOT_FOUND,
     element: (
-      <Layout>
+      <PdLayout>
         <Page404 />
-      </Layout>
+      </PdLayout>
     ),
   },
   {

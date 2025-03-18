@@ -9,21 +9,22 @@ import {
   Stack,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import { getTopBarItems } from "@models/top-bar/getTopBarItems";
 import { PATHS } from "@pages/paths";
 import { PdSwitchTheme } from "../components/PdSwitchTheme";
 import { PdSwitchLanguage } from "../components/PdSwitchLanguage";
 
 export function PdTopBarDesktop() {
-  const { background, primary } = useTheme().palette;
+  const { background, primary, text } = useTheme().palette;
   const { t } = useTranslation();
+  const { pathname } = useLocation();
 
   const items = getTopBarItems(t);
 
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
       sx={{
         backgroundColor: alpha(background.paper, 0.2),
         backdropFilter: "blur(10px)",
@@ -42,7 +43,15 @@ export function PdTopBarDesktop() {
           </Link>
         </Box>
 
-        <Box component="ul" sx={{ display: "flex", gap: 5 }}>
+        <Box
+          component="ul"
+          sx={{
+            display: "flex",
+            backgroundColor: background.default,
+            borderRadius: 8,
+            p: 1,
+          }}
+        >
           {items.map((item) => (
             <Box key={item.label} component="li" sx={{ listStyle: "none" }}>
               <Link
@@ -50,9 +59,12 @@ export function PdTopBarDesktop() {
                 to={item.href}
                 underline="none"
                 sx={{
+                  p: 1,
+                  mx: 0.3,
                   display: "block",
                   transition: "color 0.3s",
                   "&:hover": { color: primary.light },
+                  color: pathname === item.href ? primary.light : text.primary,
                 }}
               >
                 <Typography sx={{ fontWeight: "medium" }} variant="body2">

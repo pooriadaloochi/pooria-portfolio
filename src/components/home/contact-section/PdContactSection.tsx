@@ -10,7 +10,6 @@ import { PdContactWithoutCaptcha } from "./PdContactWithoutCaptcha";
 
 export function PdContactSection() {
   const { t } = useTranslation();
-  console.log("import.meta.env.process.env", import.meta.env);
 
   return (
     <Stack id="contact" my={12} mt={24} color="white" spacing={8}>

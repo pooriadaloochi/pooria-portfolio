@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Theme, useMediaQuery, useTheme } from "@mui/material";
+import { Stack, Theme, useMediaQuery, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
 // Components
 import { PdTopBarDesktop } from "@components/top-bar/PdTopBarDesktop/PdTopBarDesktop";
@@ -25,7 +25,7 @@ interface HorizontalLayoutProps {
   children?: ReactNode;
 }
 
-export function Layout(props: HorizontalLayoutProps) {
+export function PdLayout(props: HorizontalLayoutProps) {
   const { children } = props;
 
   const theme = useTheme<Theme>();
@@ -33,13 +33,13 @@ export function Layout(props: HorizontalLayoutProps) {
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <>
+    <Stack>
       {mdUp ? <PdTopBarDesktop /> : <PdTopBarMobile />}
       <HorizontalLayoutRoot>
         <HorizontalLayoutContainer>{children}</HorizontalLayoutContainer>
       </HorizontalLayoutRoot>
       <PaScrollToTopBottom />
       <PdFooter />
-    </>
+    </Stack>
   );
 }

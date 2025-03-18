@@ -12,7 +12,7 @@ export function PdContactPage() {
       <Helmet>
         <title>{t("common.homePageTitle")}</title>
       </Helmet>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ mt: 20 }}>
         <PdContactSection />
       </Container>
     </>

@@ -14,8 +14,6 @@ const root = ReactDOM.createRoot(
 );
 
 const APP_CONTEXT_INITIAL_STATE: PaAppContextState = {
-  lang: "en",
-  paletteMode: "dark",
   ...getLocalStorageAppSettings(),
 };
 
